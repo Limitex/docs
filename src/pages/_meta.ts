@@ -4,13 +4,13 @@ export default {
     title: "Home",
     display: "hidden",
   },
-  docs: {
+  vrc: {
     type: "menu",
-    title: "Documatation",
+    title: "VRChat",
     items: {
       monoui: {
         title: "Mono UI",
-        href: "/docs/monoui",
+        href: "/vrc/monoui",
       },
     },
   },
