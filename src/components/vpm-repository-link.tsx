@@ -1,5 +1,7 @@
 import React from "react";
 import { useEffect, useState } from "react";
+import { Cards } from "nextra/components";
+import { PackagePlus } from "lucide-react";
 
 const VPMRepositoryLink = () => {
   const [baseUrl, setBaseUrl] = useState("");
@@ -11,9 +13,13 @@ const VPMRepositoryLink = () => {
   const vccUrl = `vcc://vpm/addRepo?url=${baseUrl}/vpm.json`;
 
   return (
-    <a href={vccUrl} className="text-blue-600 underline hover:text-blue-800">
-      Add VCC Repository
-    </a>
+    <Cards>
+      <Cards.Card
+        icon={<PackagePlus />}
+        title="Add VCC Repositories"
+        href={vccUrl}
+      />
+    </Cards>
   );
 };
 
