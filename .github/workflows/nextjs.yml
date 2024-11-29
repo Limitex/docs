@@ -17,6 +17,8 @@ concurrency:
 jobs:
   build:
     runs-on: ubuntu-latest
+    environment: github-pages
+
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -47,6 +49,8 @@ jobs:
         run: pnpm install
 
       - name: Build with Next.js
+        env:
+          <<: ${{ vars }}
         run: pnpm next build
 
       - name: Upload artifact
