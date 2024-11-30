@@ -13,13 +13,11 @@ const VPMRepositoryLink = () => {
   const vccUrl = `vcc://vpm/addRepo?url=${baseUrl}/vpm.json`;
 
   return (
-    <Cards>
-      <Cards.Card
-        icon={<PackagePlus />}
-        title="Add VCC Repositories"
-        href={vccUrl}
-      />
-    </Cards>
+    <Cards.Card
+      icon={<PackagePlus />}
+      title="Add VCC Repositories"
+      href={vccUrl}
+    />
   );
 };
 
