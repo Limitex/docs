@@ -3,8 +3,4 @@ export default {
     type: "page",
     title: "About",
   },
-  monoui: {
-    type: "page",
-    title: "Mono UI",
-  },
 };
