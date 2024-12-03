@@ -3,14 +3,41 @@ export default {
     type: "page",
     title: "Home",
     display: "hidden",
+    theme: {
+      layout: "raw",
+    },
   },
-  docs: {
+  vrc: {
     type: "menu",
-    title: "Documatation",
+    title: "VRChat",
     items: {
+      index: {
+        title: "About",
+        href: "/vrc",
+      },
       monoui: {
         title: "Mono UI",
-        href: "/docs/monoui",
+        href: "/vrc/monoui",
+      },
+    },
+  },
+  booth: {
+    type: "menu",
+    title: "Booth.pm",
+    items: {
+      index: {
+        title: "About",
+        href: "/booth",
+      },
+    },
+  },
+  oss: {
+    type: "menu",
+    title: "Open Source",
+    items: {
+      index: {
+        title: "About",
+        href: "/oss",
       },
     },
   },
