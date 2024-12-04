@@ -6,6 +6,7 @@ import React, {
   useMemo,
   useCallback,
   useEffect,
+  Children,
 } from "react";
 import { ChevronRight, ChevronDown } from "lucide-react";
 
@@ -267,9 +268,18 @@ const Item = memo(
   }
 );
 
+const Container: React.FC<{ children: React.ReactNode }> = ({ children }) => {
+  return (
+    <div className="w-full p-4 mt-8 border rounded-lg lg:px-5 dark:border-neutral-800">
+      {children}
+    </div>
+  );
+};
+
 Item.displayName = "TreeItem";
 
 const Tree = {
+  Container,
   Root,
   Item,
 };
