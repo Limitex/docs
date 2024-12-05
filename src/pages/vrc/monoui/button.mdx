@@ -3,31 +3,13 @@ import { Tabs, Cards } from "nextra/components";
 import { Box, Package } from "lucide-react";
 import Tree from "../../../components/tree.tsx";
 import ComponentsTabs from "../../../components/components-tabs.tsx";
+import Button from "../../../components/unity-hierarchy/button.tsx";
 
 # Button
 
 Displays a button or a component that looks like a button.
 
-<ComponentsTabs
-  img="https://via.placeholder.com/500x400"
-  assetsPath="/Packages/Mono UI/Runtime/Assets/Prefab/Components/Button/Button.prefab"
-  dependencies={[
-    {
-      title: "Text h5 (TMP)",
-      href: "/vrc/monoui/text",
-    },
-  ]}
->
-  <Tree.Root defaultExpanded>
-    <Tree.Item name="Canvas (Environment)" type={Box}>
-      <Tree.Item name="Button" type={Box}>
-        <Tree.Item name="Text h5 (TMP)" type={Package}>
-          <Tree.Item name="Underline" type={Box} />
-        </Tree.Item>
-      </Tree.Item>
-    </Tree.Item>
-  </Tree.Root>
-</ComponentsTabs>
+<ComponentsTabs component={Button.Default()} />
 
 ## Installation
 
@@ -38,16 +20,11 @@ Not required.
 <Tree.Container>
   <Tree.Root defaultExpanded>
     <Tree.Item name="Canvas" type={Box}>
-      <Tree.Item name="Button (0)" type={Box} defaultExpanded={false}>
-        <Tree.Item name="Text h5 (TMP)" type={Package}>
-          <Tree.Item name="Underline" type={Box} />
-        </Tree.Item>
-      </Tree.Item>
-      <Tree.Item name="Button (1)" type={Box} defaultExpanded={false}>
-        <Tree.Item name="Text h5 (TMP)" type={Package}>
-          <Tree.Item name="Underline" type={Box} />
-        </Tree.Item>
-      </Tree.Item>
+      {Button.Default(false).content}
+      {Button.Secondary(false).content}
+      {Button.Destructive(false).content}
+      {Button.Outline(false).content}
+      {Button.Ghost(false).content}
     </Tree.Item>
   </Tree.Root>
 </Tree.Container>
@@ -56,115 +33,20 @@ Not required.
 
 ### Primary
 
-<ComponentsTabs
-  img="https://via.placeholder.com/500x400"
-  assetsPath="/Packages/Mono UI/Runtime/Assets/Prefab/Components/Button/Button.prefab"
-  dependencies={[
-    {
-      title: "Text h5 (TMP)",
-      href: "/vrc/monoui/text",
-    },
-  ]}
->
-  <Tree.Root defaultExpanded>
-    <Tree.Item name="Canvas (Environment)" type={Box}>
-      <Tree.Item name="Button" type={Box}>
-        <Tree.Item name="Text h5 (TMP)" type={Package}>
-          <Tree.Item name="Underline" type={Box} />
-        </Tree.Item>
-      </Tree.Item>
-    </Tree.Item>
-  </Tree.Root>
-</ComponentsTabs>
+<ComponentsTabs component={Button.Default()} />
 
 ### Secondary
 
-<ComponentsTabs
-  img="https://via.placeholder.com/500x400"
-  assetsPath="/Packages/Mono UI/Runtime/Assets/Prefab/Components/Button/Button Secondary.prefab"
-  dependencies={[
-    {
-      title: "Text h5 (TMP)",
-      href: "/vrc/monoui/text",
-    },
-  ]}
->
-  <Tree.Root defaultExpanded>
-    <Tree.Item name="Canvas (Environment)" type={Box}>
-      <Tree.Item name="Button Secondary" type={Package}>
-        <Tree.Item name="Text h5 (TMP)" type={Package}>
-          <Tree.Item name="Underline" type={Box} />
-        </Tree.Item>
-      </Tree.Item>
-    </Tree.Item>
-  </Tree.Root>
-</ComponentsTabs>
+<ComponentsTabs component={Button.Secondary()} />
 
 ### Destructive
 
-<ComponentsTabs
-  img="https://via.placeholder.com/500x400"
-  assetsPath="/Packages/Mono UI/Runtime/Assets/Prefab/Components/Button/Button Destructive.prefab"
-  dependencies={[
-    {
-      title: "Text h5 (TMP)",
-      href: "/vrc/monoui/text",
-    },
-  ]}
->
-  <Tree.Root defaultExpanded>
-    <Tree.Item name="Canvas (Environment)" type={Box}>
-      <Tree.Item name="Button Destructive" type={Package}>
-        <Tree.Item name="Text h5 (TMP)" type={Package}>
-          <Tree.Item name="Underline" type={Box} />
-        </Tree.Item>
-      </Tree.Item>
-    </Tree.Item>
-  </Tree.Root>
-</ComponentsTabs>
+<ComponentsTabs component={Button.Destructive()} />
 
 ### Outline
 
-<ComponentsTabs
-  img="https://via.placeholder.com/500x400"
-  assetsPath="/Packages/Mono UI/Runtime/Assets/Prefab/Components/Button/Button Outline.prefab"
-  dependencies={[
-    {
-      title: "Text h5 (TMP)",
-      href: "/vrc/monoui/text",
-    },
-  ]}
->
-  <Tree.Root defaultExpanded>
-    <Tree.Item name="Canvas (Environment)" type={Box}>
-      <Tree.Item name="Button Outline" type={Package}>
-        <Tree.Item name="Text h5 (TMP)" type={Package}>
-          <Tree.Item name="Underline" type={Box} />
-        </Tree.Item>
-      </Tree.Item>
-    </Tree.Item>
-  </Tree.Root>
-</ComponentsTabs>
+<ComponentsTabs component={Button.Outline()} />
 
 ### Ghost
 
-<ComponentsTabs
-  img="https://via.placeholder.com/500x400"
-  assetsPath="/Packages/Mono UI/Runtime/Assets/Prefab/Components/Button/Button Ghost.prefab"
-  dependencies={[
-    {
-      title: "Text h5 (TMP)",
-      href: "/vrc/monoui/text",
-    },
-  ]}
->
-  <Tree.Root defaultExpanded>
-    <Tree.Item name="Canvas (Environment)" type={Box}>
-      <Tree.Item name="Button Ghost" type={Package}>
-        <Tree.Item name="Text h5 (TMP)" type={Package}>
-          <Tree.Item name="Underline" type={Box} />
-        </Tree.Item>
-      </Tree.Item>
-    </Tree.Item>
-  </Tree.Root>
-</ComponentsTabs>
+<ComponentsTabs component={Button.Ghost()} />

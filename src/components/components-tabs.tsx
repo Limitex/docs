@@ -1,27 +1,42 @@
 import React from "react";
 import Image from "next/image";
 import { Tabs, Cards } from "nextra/components";
-import { Package } from "lucide-react";
+import { Box, Package } from "lucide-react";
 import { Code } from "@nextui-org/code";
-
-type Dependency = {
-  title: string;
-  href: string;
-};
+import type { ComponentData, ComponentResult } from "./unity-hierarchy/type";
+import Tree from "./tree";
 
 type ComponentsTabsProps = {
-  img?: string;
-  assetsPath?: string;
-  children?: React.ReactNode;
-  dependencies?: Dependency[];
+  component: ComponentResult;
+};
+
+const DependencyCard: React.FC<{ dependency: ComponentData }> = ({ dependency }) => {
+  return (
+    <Cards.Card
+      key={dependency.href}
+      icon={<Package />}
+      title={dependency.title}
+      href={dependency.href}
+    >
+      {dependency.dependencies && dependency.dependencies.length > 0 && (
+        <div className="mt-4 pl-4 border-l dark:border-neutral-800">
+          <Cards className="m-0">
+            {dependency.dependencies.map((dep) => (
+              <DependencyCard key={dep.href} dependency={dep} />
+            ))}
+          </Cards>
+        </div>
+      )}
+    </Cards.Card>
+  );
 };
 
 const ComponentsTabs: React.FC<ComponentsTabsProps> = ({
-  img = "https://via.placeholder.com/500x400",
-  assetsPath = "/",
-  children = null,
-  dependencies = [],
+  component
 }) => {
+  const { data, content } = component;
+  const { img, assetsPath, dependencies = [] } = data;
+
   return (
     <div className="py-5">
       <Code>{assetsPath}</Code>
@@ -36,18 +51,21 @@ const ComponentsTabs: React.FC<ComponentsTabsProps> = ({
           />
         </Tabs.Tab>
         <Tabs.Tab className="w-full p-4 border rounded-lg lg:px-5 dark:border-neutral-800">
-          {children ? children : <p>No hierarchy provided.</p>}
+          {content ? (
+            <Tree.Root defaultExpanded>
+              <Tree.Item name="Canvas (Environment)" type={Box}>
+                {content}
+              </Tree.Item>
+            </Tree.Root>
+          ) : (
+            <p>No hierarchy provided.</p>
+          )}
         </Tabs.Tab>
         <Tabs.Tab className="w-full p-4 border rounded-lg lg:px-5 dark:border-neutral-800">
           {dependencies.length > 0 ? (
             <Cards className="m-0">
               {dependencies.map((dep) => (
-                <Cards.Card
-                  key={dep.href}
-                  icon={<Package />}
-                  title={dep.title}
-                  href={dep.href}
-                />
+                <DependencyCard key={dep.href} dependency={dep} />
               ))}
             </Cards>
           ) : (
