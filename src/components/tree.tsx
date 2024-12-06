@@ -15,7 +15,7 @@ const PADDING_STEP = 20;
 const PADDING_LEFT = 6;
 
 type IconComponentType = React.ComponentType<{ className: string }>;
-type ColorVariant = "primary" | "secondary" | "highlight" | undefined;
+export type ColorVariant = "primary" | "secondary" | "highlight";
 
 type TreeRootProps = {
   children: React.ReactNode;
