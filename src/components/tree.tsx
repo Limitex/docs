@@ -35,6 +35,8 @@ export type TreeItemProps = {
   itemClassName?: string;
   disabled?: boolean;
   variant?: ColorVariant;
+  highlightPaths?: string[];
+  currentPath?: string;
 };
 
 type TreeContextType = {
@@ -154,6 +156,8 @@ const Item = memo(
     itemClassName = "",
     disabled = false,
     variant = "primary",
+    highlightPaths = [],
+    currentPath = "",
   }: TreeItemProps) => {
     const {
       level,
@@ -197,8 +201,14 @@ const Item = memo(
       [handleClick]
     );
 
+    const fullPath = currentPath ? `${currentPath}/${name}` : name;
+    
+    const isHighlighted = highlightPaths.includes(fullPath);
+    
+    const finalVariant = isHighlighted ? "highlight" : variant;
+
     const finalItemClassName = `flex items-center px-2 py-1 rounded cursor-default
-      ${getVariantStyles(variant)}
+      ${getVariantStyles(finalVariant)}
       ${disabled ? "opacity-50 cursor-not-allowed" : ""}
       ${itemClassName || contextItemClassName || ""}
       ${className}`;
@@ -259,7 +269,15 @@ const Item = memo(
         {!isLeaf && isExpanded && (
           <TreeContext.Provider value={contextValue}>
             <div role="group" data-parent={name}>
-              {children}
+              {React.Children.map(children, (child) => {
+                if (React.isValidElement<TreeItemProps>(child)) {
+                  return React.cloneElement(child, {
+                    highlightPaths,
+                    currentPath: fullPath,
+                  } as Partial<TreeItemProps>);
+                }
+                return child;
+              })}
             </div>
           </TreeContext.Provider>
         )}
