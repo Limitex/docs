@@ -24,8 +24,8 @@ Place the Toast Provider component directly under the Canvas component in your U
 
 <Tree.Container>
   <Tree.Root defaultExpanded>
-    <Tree.Item name="Canvas" type={Box}>
-      {Toast.Default({ defaultExpanded: false }).content}
+    <Tree.Item name="Canvas" type={Box} >
+      {Toast.Default({ defaultExpanded: false, variant: "highlight" }).content}
     </Tree.Item>
   </Tree.Root>
 </Tree.Container>

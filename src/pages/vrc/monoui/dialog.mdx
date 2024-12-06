@@ -25,7 +25,7 @@ Place the Dialog Provider component directly under the Canvas component in your 
 <Tree.Container>
   <Tree.Root defaultExpanded>
     <Tree.Item name="Canvas" type={Box}>
-      {Dialog.Default({ defaultExpanded: false }).content}
+      {Dialog.Default({ defaultExpanded: false, variant: "highlight" }).content}
     </Tree.Item>
   </Tree.Root>
 </Tree.Container>
@@ -54,9 +54,16 @@ Add the functions you want to call to the OnClick events of the Continue or Canc
 
 <Tree.Container>
   <Tree.Root defaultExpanded>
-    <Tree.Item name="Canvas" type={Box}>
+    <Tree.Item
+      name="Canvas"
+      type={Box}
+      highlightPaths={[
+        "Canvas/Dialog Provider/Foreground/Container/Button Container/Button Outline",
+        "Canvas/Dialog Provider/Foreground/Container/Button Container/Button"
+      ]}
+    >
       {Button.Default({ defaultExpanded: false }).content}
-      {Dialog.Default({ defaultExpanded: false }).content}
+      {Dialog.Default({ defaultExpanded: true }).content}
     </Tree.Item>
   </Tree.Root>
 </Tree.Container>
