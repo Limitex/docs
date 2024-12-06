@@ -3,8 +3,12 @@ import Tree from "../tree";
 import Text from "./text";
 import type { ComponentResult } from "./type";
 
-const CardDefault = (defaultExpanded: boolean = true): ComponentResult => {
-  const TextH5 = Text.H5(defaultExpanded);
+type CardProps = {
+  name?: string;
+};
+
+const CardDefault = (defaultExpanded: boolean = true, props: CardProps = {}): ComponentResult => {
+  const displayName = props.name ?? "Card";
 
   return {
     data: {
@@ -15,7 +19,7 @@ const CardDefault = (defaultExpanded: boolean = true): ComponentResult => {
       dependencies: [],
     },
     content: (
-      <Tree.Item name="Card" type={Package} defaultExpanded={defaultExpanded}>
+      <Tree.Item name={displayName} type={Package} defaultExpanded={defaultExpanded}>
         <Tree.Item name="Outline" type={Box} />
         <Tree.Item name="Contents" type={Box} />
       </Tree.Item>
@@ -24,12 +28,12 @@ const CardDefault = (defaultExpanded: boolean = true): ComponentResult => {
 };
 
 const createCardWithDefault = (
-  cardFn: (defaultExpanded: boolean) => ComponentResult
+  cardFn: (defaultExpanded: boolean, props?: CardProps) => ComponentResult
 ) => {
-  return (defaultExpanded: boolean = true) => cardFn(defaultExpanded);
+  return (defaultExpanded: boolean = true, props?: CardProps) => cardFn(defaultExpanded, props);
 };
 
-const Card: Record<string, (defaultExpanded?: boolean) => ComponentResult> = {
+const Card: Record<string, (defaultExpanded?: boolean, props?: CardProps) => ComponentResult> = {
   Default: createCardWithDefault(CardDefault),
 };
 

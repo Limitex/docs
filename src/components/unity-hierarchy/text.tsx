@@ -2,7 +2,13 @@ import { Box, Package } from "lucide-react";
 import Tree from "../tree";
 import type { ComponentResult } from "./type";
 
-const TextDefault = (defaultExpanded: boolean = true): ComponentResult => {
+type TextProps = {
+  name?: string;
+};
+
+const TextDefault = (defaultExpanded: boolean = true, props: TextProps = {}): ComponentResult => {
+  const displayName = props.name ?? "Text (TMP)";
+  
   return {
     data: {
       title: "Text (TMP)",
@@ -11,14 +17,16 @@ const TextDefault = (defaultExpanded: boolean = true): ComponentResult => {
       assetsPath: "/Packages/Mono UI/Runtime/Assets/Prefab/Components/Text/Text (TMP).prefab",
     },
     content: (
-      <Tree.Item name="Text (TMP)" type={Package} defaultExpanded={defaultExpanded}>
+      <Tree.Item name={displayName} type={Package} defaultExpanded={defaultExpanded}>
         <Tree.Item name="Underline" type={Box} />
       </Tree.Item>
     ),
   };
 };
 
-const TextH1 = (defaultExpanded: boolean = true): ComponentResult => {
+const TextH1 = (defaultExpanded: boolean = true, props: TextProps = {}): ComponentResult => {
+  const displayName = props.name ?? "Text h1 (TMP)";
+  
   return {
     data: {
       title: "Text h1 (TMP)",
@@ -27,14 +35,16 @@ const TextH1 = (defaultExpanded: boolean = true): ComponentResult => {
       assetsPath: "/Packages/Mono UI/Runtime/Assets/Prefab/Components/Text/Text h1 (TMP).prefab",
     },
     content: (
-      <Tree.Item name="Text h1 (TMP)" type={Package} defaultExpanded={defaultExpanded}>
+      <Tree.Item name={displayName} type={Package} defaultExpanded={defaultExpanded}>
         <Tree.Item name="Underline" type={Box} />
       </Tree.Item>
     ),
   };
 };
 
-const TextH2 = (defaultExpanded: boolean = true): ComponentResult => {
+const TextH2 = (defaultExpanded: boolean = true, props: TextProps = {}): ComponentResult => {
+  const displayName = props.name ?? "Text h2 (TMP)";
+  
   return {
     data: {
       title: "Text h2 (TMP)",
@@ -43,14 +53,16 @@ const TextH2 = (defaultExpanded: boolean = true): ComponentResult => {
       assetsPath: "/Packages/Mono UI/Runtime/Assets/Prefab/Components/Text/Text h2 (TMP).prefab",
     },
     content: (
-      <Tree.Item name="Text h2 (TMP)" type={Package} defaultExpanded={defaultExpanded}>
+      <Tree.Item name={displayName} type={Package} defaultExpanded={defaultExpanded}>
         <Tree.Item name="Underline" type={Box} />
       </Tree.Item>
     ),
   };
 };
 
-const TextH3 = (defaultExpanded: boolean = true): ComponentResult => {
+const TextH3 = (defaultExpanded: boolean = true, props: TextProps = {}): ComponentResult => {
+  const displayName = props.name ?? "Text h3 (TMP)";
+  
   return {
     data: {
       title: "Text h3 (TMP)",
@@ -59,14 +71,16 @@ const TextH3 = (defaultExpanded: boolean = true): ComponentResult => {
       assetsPath: "/Packages/Mono UI/Runtime/Assets/Prefab/Components/Text/Text h3 (TMP).prefab",
     },
     content: (
-      <Tree.Item name="Text h3 (TMP)" type={Package} defaultExpanded={defaultExpanded}>
+      <Tree.Item name={displayName} type={Package} defaultExpanded={defaultExpanded}>
         <Tree.Item name="Underline" type={Box} />
       </Tree.Item>
     ),
   };
 };
 
-const TextH4 = (defaultExpanded: boolean = true): ComponentResult => {
+const TextH4 = (defaultExpanded: boolean = true, props: TextProps = {}): ComponentResult => {
+  const displayName = props.name ?? "Text h4 (TMP)";
+  
   return {
     data: {
       title: "Text h4 (TMP)",
@@ -75,14 +89,16 @@ const TextH4 = (defaultExpanded: boolean = true): ComponentResult => {
       assetsPath: "/Packages/Mono UI/Runtime/Assets/Prefab/Components/Text/Text h4 (TMP).prefab",
     },
     content: (
-      <Tree.Item name="Text h4 (TMP)" type={Package} defaultExpanded={defaultExpanded}>
+      <Tree.Item name={displayName} type={Package} defaultExpanded={defaultExpanded}>
         <Tree.Item name="Underline" type={Box} />
       </Tree.Item>
     ),
   };
 };
 
-const TextH5 = (defaultExpanded: boolean = true): ComponentResult => {
+const TextH5 = (defaultExpanded: boolean = true, props: TextProps = {}): ComponentResult => {
+  const displayName = props.name ?? "Text h5 (TMP)";
+  
   return {
     data: {
       title: "Text h5 (TMP)",
@@ -91,14 +107,16 @@ const TextH5 = (defaultExpanded: boolean = true): ComponentResult => {
       assetsPath: "/Packages/Mono UI/Runtime/Assets/Prefab/Components/Text/Text h5 (TMP).prefab",
     },
     content: (
-      <Tree.Item name="Text h5 (TMP)" type={Package} defaultExpanded={defaultExpanded}>
+      <Tree.Item name={displayName} type={Package} defaultExpanded={defaultExpanded}>
         <Tree.Item name="Underline" type={Box} />
       </Tree.Item>
     ),
   };
 };
 
-const TextH6 = (defaultExpanded: boolean = true): ComponentResult => {
+const TextH6 = (defaultExpanded: boolean = true, props: TextProps = {}): ComponentResult => {
+  const displayName = props.name ?? "Text h6 (TMP)";
+  
   return {
     data: {
       title: "Text h6 (TMP)",
@@ -107,7 +125,7 @@ const TextH6 = (defaultExpanded: boolean = true): ComponentResult => {
       assetsPath: "/Packages/Mono UI/Runtime/Assets/Prefab/Components/Text/Text h6 (TMP).prefab",
     },
     content: (
-      <Tree.Item name="Text h6 (TMP)" type={Package} defaultExpanded={defaultExpanded}>
+      <Tree.Item name={displayName} type={Package} defaultExpanded={defaultExpanded}>
         <Tree.Item name="Underline" type={Box} />
       </Tree.Item>
     ),
@@ -115,12 +133,12 @@ const TextH6 = (defaultExpanded: boolean = true): ComponentResult => {
 };
 
 const createTextWithDefault = (
-  textFn: (defaultExpanded: boolean) => ComponentResult
+  textFn: (defaultExpanded: boolean, props?: TextProps) => ComponentResult
 ) => {
-  return (defaultExpanded: boolean = true) => textFn(defaultExpanded);
+  return (defaultExpanded: boolean = true, props?: TextProps) => textFn(defaultExpanded, props);
 };
 
-const Text: Record<string, (defaultExpanded?: boolean) => ComponentResult> = {
+const Text: Record<string, (defaultExpanded?: boolean, props?: TextProps) => ComponentResult> = {
   Default: createTextWithDefault(TextDefault),
   H1: createTextWithDefault(TextH1),
   H2: createTextWithDefault(TextH2),

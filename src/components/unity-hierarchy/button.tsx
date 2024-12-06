@@ -3,49 +3,53 @@ import Tree from "../tree";
 import Text from "./text";
 import type { ComponentResult } from "./type";
 
-const ButtonDefault = (
-  defaultExpanded: boolean = true
-): ComponentResult => {
+type ButtonProps = {
+  name?: string;
+};
+
+const ButtonDefault = (defaultExpanded: boolean = true, props: ButtonProps = {}): ComponentResult => {
   const TextH5 = Text.H5(defaultExpanded);
+  const displayName = props.name ?? "Button";
 
   return {
     data: {
       title: "Button",
       img: "https://via.placeholder.com/500x400",
       href: "/vrc/monoui/button",
-      assetsPath:
-        "/Packages/Mono UI/Runtime/Assets/Prefab/Components/Button/Button.prefab",
+      assetsPath:"/Packages/Mono UI/Runtime/Assets/Prefab/Components/Button/Button.prefab",
       dependencies: [TextH5.data],
     },
     content: (
-      <Tree.Item name="Button" type={Package} defaultExpanded={defaultExpanded}>
+      <Tree.Item name={displayName} type={Package} defaultExpanded={defaultExpanded}>
         {TextH5.content}
       </Tree.Item>
     ),
   };
 };
 
-const ButtonSecondary = (defaultExpanded: boolean = true): ComponentResult => {
+const ButtonSecondary = (defaultExpanded: boolean = true, props: ButtonProps = {}): ComponentResult => {
   const TextH5 = Text.H5(defaultExpanded);
+  const displayName = props.name ?? "Button Secondary";
 
   return {
     data: {
       title: "Button Secondary",
-      img: "https://via.placeholder.com/500x400", 
+      img: "https://via.placeholder.com/500x400",
       href: "/vrc/monoui/button",
       assetsPath: "/Packages/Mono UI/Runtime/Assets/Prefab/Components/Button/Button Secondary.prefab",
       dependencies: [TextH5.data],
     },
     content: (
-      <Tree.Item name="Button Secondary" type={Package} defaultExpanded={defaultExpanded}>
+      <Tree.Item name={displayName} type={Package} defaultExpanded={defaultExpanded}>
         {TextH5.content}
       </Tree.Item>
     ),
   };
 };
 
-const ButtonDestructive = (defaultExpanded: boolean = true): ComponentResult => {
+const ButtonDestructive = (defaultExpanded: boolean = true, props: ButtonProps = {}): ComponentResult => {
   const TextH5 = Text.H5(defaultExpanded);
+  const displayName = props.name ?? "Button Destructive";
 
   return {
     data: {
@@ -56,15 +60,16 @@ const ButtonDestructive = (defaultExpanded: boolean = true): ComponentResult => 
       dependencies: [TextH5.data],
     },
     content: (
-      <Tree.Item name="Button Destructive" type={Package} defaultExpanded={defaultExpanded}>
+      <Tree.Item name={displayName} type={Package} defaultExpanded={defaultExpanded}>
         {TextH5.content}
       </Tree.Item>
     ),
   };
 };
 
-const ButtonOutline = (defaultExpanded: boolean = true): ComponentResult => {
+const ButtonOutline = (defaultExpanded: boolean = true, props: ButtonProps = {}): ComponentResult => {
   const TextH5 = Text.H5(defaultExpanded);
+  const displayName = props.name ?? "Button Outline";
 
   return {
     data: {
@@ -75,15 +80,16 @@ const ButtonOutline = (defaultExpanded: boolean = true): ComponentResult => {
       dependencies: [TextH5.data],
     },
     content: (
-      <Tree.Item name="Button Outline" type={Package} defaultExpanded={defaultExpanded}>
+      <Tree.Item name={displayName} type={Package} defaultExpanded={defaultExpanded}>
         {TextH5.content}
       </Tree.Item>
     ),
   };
 };
 
-const ButtonGhost = (defaultExpanded: boolean = true): ComponentResult => {
+const ButtonGhost = (defaultExpanded: boolean = true, props: ButtonProps = {}): ComponentResult => {
   const TextH5 = Text.H5(defaultExpanded);
+  const displayName = props.name ?? "Button Ghost";
 
   return {
     data: {
@@ -94,7 +100,7 @@ const ButtonGhost = (defaultExpanded: boolean = true): ComponentResult => {
       dependencies: [TextH5.data],
     },
     content: (
-      <Tree.Item name="Button Ghost" type={Package} defaultExpanded={defaultExpanded}>
+      <Tree.Item name={displayName} type={Package} defaultExpanded={defaultExpanded}>
         {TextH5.content}
       </Tree.Item>
     ),
@@ -102,12 +108,12 @@ const ButtonGhost = (defaultExpanded: boolean = true): ComponentResult => {
 };
 
 const createButtonWithDefault = (
-  buttonFn: (defaultExpanded: boolean) => ComponentResult
+  buttonFn: (defaultExpanded: boolean, props?: ButtonProps) => ComponentResult
 ) => {
-  return (defaultExpanded: boolean = true) => buttonFn(defaultExpanded);
+  return (defaultExpanded: boolean = true, props?: ButtonProps) => buttonFn(defaultExpanded, props);
 };
 
-const Button: Record<string, (defaultExpanded?: boolean) => ComponentResult> = {
+const Button: Record<string, (defaultExpanded?: boolean, props?: ButtonProps) => ComponentResult> = {
   Default: createButtonWithDefault(ButtonDefault),
   Secondary: createButtonWithDefault(ButtonSecondary),
   Destructive: createButtonWithDefault(ButtonDestructive),

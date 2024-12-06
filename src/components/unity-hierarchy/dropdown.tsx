@@ -3,8 +3,13 @@ import Tree from "../tree";
 import Text from "./text";
 import type { ComponentResult } from "./type";
 
-const DropdownDefault = (defaultExpanded: boolean = true): ComponentResult => {
+type DropdownProps = {
+  name?: string;
+};
+
+const DropdownDefault = (defaultExpanded: boolean = true, props: DropdownProps = {}): ComponentResult => {
   const TextH5 = Text.H5(defaultExpanded);
+  const displayName = props.name ?? "Dropdown";
 
   return {
     data: {
@@ -15,7 +20,7 @@ const DropdownDefault = (defaultExpanded: boolean = true): ComponentResult => {
       dependencies: [TextH5.data],
     },
     content: (
-      <Tree.Item name="Dropdown" type={Package} defaultExpanded={defaultExpanded}>
+      <Tree.Item name={displayName} type={Package} defaultExpanded={defaultExpanded}>
         <Tree.Item name="Outline" type={Box} />
         {TextH5.content}
         <Tree.Item name="Template" type={Box}>
@@ -41,12 +46,12 @@ const DropdownDefault = (defaultExpanded: boolean = true): ComponentResult => {
 };
 
 const createDropdownWithDefault = (
-  dropdownFn: (defaultExpanded: boolean) => ComponentResult
+  dropdownFn: (defaultExpanded: boolean, props?: DropdownProps) => ComponentResult
 ) => {
-  return (defaultExpanded: boolean = true) => dropdownFn(defaultExpanded);
+  return (defaultExpanded: boolean = true, props?: DropdownProps) => dropdownFn(defaultExpanded, props);
 };
 
-const Dropdown: Record<string, (defaultExpanded?: boolean) => ComponentResult> = {
+const Dropdown: Record<string, (defaultExpanded?: boolean, props?: DropdownProps) => ComponentResult> = {
   Default: createDropdownWithDefault(DropdownDefault),
 };
 
