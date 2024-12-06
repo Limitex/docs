@@ -8,6 +8,7 @@ import Tree from "./tree";
 
 type ComponentsTabsProps = {
   component: ComponentResult;
+  showCanvas?: boolean;
 };
 
 const DependencyCard: React.FC<{ dependency: ComponentData }> = ({ dependency }) => {
@@ -32,7 +33,8 @@ const DependencyCard: React.FC<{ dependency: ComponentData }> = ({ dependency })
 };
 
 const ComponentsTabs: React.FC<ComponentsTabsProps> = ({
-  component
+  component,
+  showCanvas = true
 }) => {
   const { data, content } = component;
   const { img, assetsPath, dependencies = [] } = data;
@@ -53,9 +55,13 @@ const ComponentsTabs: React.FC<ComponentsTabsProps> = ({
         <Tabs.Tab className="w-full p-4 border rounded-lg lg:px-5 dark:border-neutral-800">
           {content ? (
             <Tree.Root defaultExpanded>
-              <Tree.Item name="Canvas (Environment)" type={Box}>
-                {content}
-              </Tree.Item>
+              {showCanvas ? (
+                <Tree.Item name="Canvas (Environment)" type={Box}>
+                  {content}
+                </Tree.Item>
+              ) : (
+                content
+              )}
             </Tree.Root>
           ) : (
             <p>No hierarchy provided.</p>
