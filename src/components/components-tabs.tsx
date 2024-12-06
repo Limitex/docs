@@ -12,22 +12,22 @@ type ComponentsTabsProps = {
 
 const DependencyCard: React.FC<{ dependency: ComponentData }> = ({ dependency }) => {
   return (
-    <Cards.Card
-      key={dependency.href}
-      icon={<Package />}
-      title={dependency.title}
-      href={dependency.href}
-    >
+    <div className="flex flex-col gap-2">
+      <Cards.Card
+        icon={<Package />}
+        title={dependency.title}
+        href={dependency.href}
+      />
       {dependency.dependencies && dependency.dependencies.length > 0 && (
-        <div className="mt-4 pl-4 border-l dark:border-neutral-800">
-          <Cards className="m-0">
+        <div className="ml-4 pl-4 border-l dark:border-neutral-800">
+          <div className="flex flex-col gap-2">
             {dependency.dependencies.map((dep) => (
               <DependencyCard key={dep.href} dependency={dep} />
             ))}
-          </Cards>
+          </div>
         </div>
       )}
-    </Cards.Card>
+    </div>
   );
 };
 
@@ -63,11 +63,11 @@ const ComponentsTabs: React.FC<ComponentsTabsProps> = ({
         </Tabs.Tab>
         <Tabs.Tab className="w-full p-4 border rounded-lg lg:px-5 dark:border-neutral-800">
           {dependencies.length > 0 ? (
-            <Cards className="m-0">
+            <div className="flex flex-col gap-2">
               {dependencies.map((dep) => (
                 <DependencyCard key={dep.href} dependency={dep} />
               ))}
-            </Cards>
+            </div>
           ) : (
             <p>No dependencies found.</p>
           )}
