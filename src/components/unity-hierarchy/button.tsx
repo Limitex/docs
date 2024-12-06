@@ -18,7 +18,7 @@ const ButtonDefault = (
       dependencies: [TextH5.data],
     },
     content: (
-      <Tree.Item name="Button" type={Box} defaultExpanded={defaultExpanded}>
+      <Tree.Item name="Button" type={Package} defaultExpanded={defaultExpanded}>
         {TextH5.content}
       </Tree.Item>
     ),

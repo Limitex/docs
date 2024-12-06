@@ -15,7 +15,7 @@ const CardDefault = (defaultExpanded: boolean = true): ComponentResult => {
       dependencies: [],
     },
     content: (
-      <Tree.Item name="Card" type={Box} defaultExpanded={defaultExpanded}>
+      <Tree.Item name="Card" type={Package} defaultExpanded={defaultExpanded}>
         <Tree.Item name="Outline" type={Box} />
         <Tree.Item name="Contents" type={Box} />
       </Tree.Item>

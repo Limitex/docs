@@ -15,7 +15,7 @@ const ToggleDefault = (defaultExpanded: boolean = true): ComponentResult => {
       dependencies: [TextH5.data],
     },
     content: (
-      <Tree.Item name="Toggle" type={Box} defaultExpanded={defaultExpanded}>
+      <Tree.Item name="Toggle" type={Package} defaultExpanded={defaultExpanded}>
         <Tree.Item name="Background" type={Box} defaultExpanded={defaultExpanded}>
           <Tree.Item name="Checkmark" type={Box} />
         </Tree.Item>
@@ -37,7 +37,7 @@ const ToggleOutline = (defaultExpanded: boolean = true): ComponentResult => {
       dependencies: [TextH5.data],
     },
     content: (
-      <Tree.Item name="Toggle" type={Box} defaultExpanded={defaultExpanded}>
+      <Tree.Item name="Toggle" type={Package} defaultExpanded={defaultExpanded}>
         <Tree.Item name="Outline" type={Box}/>
         <Tree.Item name="Background" type={Box} defaultExpanded={defaultExpanded}>
           <Tree.Item name="Checkmark" type={Box} />

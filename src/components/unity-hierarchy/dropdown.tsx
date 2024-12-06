@@ -15,7 +15,7 @@ const DropdownDefault = (defaultExpanded: boolean = true): ComponentResult => {
       dependencies: [TextH5.data],
     },
     content: (
-      <Tree.Item name="Dropdown" type={Box} defaultExpanded={defaultExpanded}>
+      <Tree.Item name="Dropdown" type={Package} defaultExpanded={defaultExpanded}>
         <Tree.Item name="Outline" type={Box} />
         {TextH5.content}
         <Tree.Item name="Template" type={Box}>
