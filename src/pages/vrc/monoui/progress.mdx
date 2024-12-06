@@ -1,1 +1,33 @@
+import Image from "next/image";
+import { Tabs, Cards } from "nextra/components";
+import { Box, Package } from "lucide-react";
+import Tree from "../../../components/tree.tsx";
+import ComponentsTabs from "../../../components/components-tabs.tsx";
+import Progress from "../../../components/unity-hierarchy/progress.tsx";
+
 # Progress
+
+Displays a progress or a component that looks like a progress.
+
+<ComponentsTabs component={Progress.Default()} />
+
+## Installation
+
+Not required.
+
+## Usage
+
+<Tree.Container>
+  <Tree.Root defaultExpanded>
+    <Tree.Item name="Canvas" type={Box}>
+      {Progress.Default(false).content}
+      {Progress.Default(false).content}
+    </Tree.Item>
+  </Tree.Root>
+</Tree.Container>
+
+## Examples
+
+### Primary
+
+<ComponentsTabs component={Progress.Default()} />
