@@ -1,17 +1,13 @@
 import { Box, Package } from "lucide-react";
-import Tree from "../tree";
+import Tree, { TreeItemProps } from "../tree";
 import Text from "./text";
 import Button from "./button";
 import type { ComponentResult } from "./type";
 
-type ToastProps = {
-  name?: string;
-};
-
-const ToastDefault = (defaultExpanded: boolean = true, props: ToastProps = {}): ComponentResult => {
-  const TextH5 = Text.H5(defaultExpanded);
-  const TextH6 = Text.H6(defaultExpanded);
-  const ButtonOutline = Button.Outline(defaultExpanded);
+const ToastDefault = (props: Partial<TreeItemProps> = {}): ComponentResult => {
+  const TextH5 = Text.H5();
+  const TextH6 = Text.H6();
+  const ButtonOutline = Button.Outline();
   const displayName = props.name ?? "Toast Provider";
 
   return {
@@ -23,11 +19,11 @@ const ToastDefault = (defaultExpanded: boolean = true, props: ToastProps = {}): 
       dependencies: [TextH5.data, TextH6.data, ButtonOutline.data],
     },
     content: (
-      <Tree.Item name={displayName} type={Package} defaultExpanded={defaultExpanded}>
-        <Tree.Item name="Viewport" type={Box} defaultExpanded={defaultExpanded}>
-          <Tree.Item name="Contents" type={Box} defaultExpanded={defaultExpanded}>
+      <Tree.Item name={displayName} type={Package} {...props}>
+        <Tree.Item name="Viewport" type={Box}>
+          <Tree.Item name="Contents" type={Box}>
             <Tree.Item name="Outline" type={Box} />
-            <Tree.Item name="Contents" type={Box} defaultExpanded={defaultExpanded}>
+            <Tree.Item name="Contents" type={Box}>
               <Tree.Item name="Text" type={Box}>
                 {TextH5.content}
                 {TextH6.content}
@@ -43,14 +39,8 @@ const ToastDefault = (defaultExpanded: boolean = true, props: ToastProps = {}): 
   };
 };
 
-const createToastWithDefault = (
-  toastFn: (defaultExpanded: boolean, props?: ToastProps) => ComponentResult
-) => {
-  return (defaultExpanded: boolean = true, props?: ToastProps) => toastFn(defaultExpanded, props);
-};
-
-const Toast: Record<string, (defaultExpanded?: boolean, props?: ToastProps) => ComponentResult> = {
-  Default: createToastWithDefault(ToastDefault),
+const Toast: Record<string, (props?: Partial<TreeItemProps>) => ComponentResult> = {
+  Default: ToastDefault,
 };
 
 export default Toast; 

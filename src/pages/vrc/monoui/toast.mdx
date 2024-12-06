@@ -25,7 +25,7 @@ Place the Toast Provider component directly under the Canvas component in your U
 <Tree.Container>
   <Tree.Root defaultExpanded>
     <Tree.Item name="Canvas" type={Box}>
-      {Toast.Default(false).content}
+      {Toast.Default({ defaultExpanded: false }).content}
     </Tree.Item>
   </Tree.Root>
 </Tree.Container>
@@ -41,8 +41,8 @@ Add the provider to the button's OnClick and set `MonoUI_Toast_isTrigger` in Ani
 <Tree.Container>
   <Tree.Root defaultExpanded>
     <Tree.Item name="Canvas" type={Box}>
-      {Button.Default(false, { variant: "highlight" }).content}
-      {Toast.Default(false).content}
+      {Button.Default({ defaultExpanded: false, variant: "highlight" }).content}
+      {Toast.Default({ defaultExpanded: false }).content}
     </Tree.Item>
   </Tree.Root>
 </Tree.Container>

@@ -1,13 +1,8 @@
 import { Box, Package } from "lucide-react";
-import Tree from "../tree";
-import Text from "./text";
+import Tree, { TreeItemProps } from "../tree";
 import type { ComponentResult } from "./type";
 
-type CardProps = {
-  name?: string;
-};
-
-const CardDefault = (defaultExpanded: boolean = true, props: CardProps = {}): ComponentResult => {
+const CardDefault = (props: Partial<TreeItemProps> = {}): ComponentResult => {
   const displayName = props.name ?? "Card";
 
   return {
@@ -19,7 +14,7 @@ const CardDefault = (defaultExpanded: boolean = true, props: CardProps = {}): Co
       dependencies: [],
     },
     content: (
-      <Tree.Item name={displayName} type={Package} defaultExpanded={defaultExpanded}>
+      <Tree.Item name={displayName} type={Package} {...props}>
         <Tree.Item name="Outline" type={Box} />
         <Tree.Item name="Contents" type={Box} />
       </Tree.Item>
@@ -27,14 +22,8 @@ const CardDefault = (defaultExpanded: boolean = true, props: CardProps = {}): Co
   };
 };
 
-const createCardWithDefault = (
-  cardFn: (defaultExpanded: boolean, props?: CardProps) => ComponentResult
-) => {
-  return (defaultExpanded: boolean = true, props?: CardProps) => cardFn(defaultExpanded, props);
-};
-
-const Card: Record<string, (defaultExpanded?: boolean, props?: CardProps) => ComponentResult> = {
-  Default: createCardWithDefault(CardDefault),
+const Card: Record<string, (props?: Partial<TreeItemProps>) => ComponentResult> = {
+  Default: CardDefault,
 };
 
 export default Card; 

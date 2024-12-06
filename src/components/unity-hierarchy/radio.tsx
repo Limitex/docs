@@ -1,14 +1,10 @@
 import { Box, Package } from "lucide-react";
-import Tree from "../tree";
+import Tree, { TreeItemProps } from "../tree";
 import Text from "./text";
 import type { ComponentResult } from "./type";
 
-type RadioProps = {
-  name?: string;
-};
-
-const RadioDefault = (defaultExpanded: boolean = true, props: RadioProps = {}): ComponentResult => {
-  const TextH5 = Text.H5(defaultExpanded);
+const RadioDefault = (props: Partial<TreeItemProps> = {}): ComponentResult => {
+  const TextH5 = Text.H5();
   const displayName = props.name ?? "Radio";
 
   return {
@@ -20,8 +16,8 @@ const RadioDefault = (defaultExpanded: boolean = true, props: RadioProps = {}): 
       dependencies: [TextH5.data],
     },
     content: (
-      <Tree.Item name={displayName} type={Package} defaultExpanded={defaultExpanded}>
-        <Tree.Item name="Background" type={Box} defaultExpanded={defaultExpanded}>
+      <Tree.Item name={displayName} type={Package} {...props}>
+        <Tree.Item name="Background" type={Box}>
           <Tree.Item name="Checkmark" type={Box} />
         </Tree.Item>
         {TextH5.content}
@@ -30,14 +26,8 @@ const RadioDefault = (defaultExpanded: boolean = true, props: RadioProps = {}): 
   };
 };
 
-const createRadioWithDefault = (
-  radioFn: (defaultExpanded: boolean, props?: RadioProps) => ComponentResult
-) => {
-  return (defaultExpanded: boolean = true, props?: RadioProps) => radioFn(defaultExpanded, props);
-};
-
-const Radio: Record<string, (defaultExpanded?: boolean, props?: RadioProps) => ComponentResult> = {
-  Default: createRadioWithDefault(RadioDefault),
+const Radio: Record<string, (props?: Partial<TreeItemProps>) => ComponentResult> = {
+  Default: RadioDefault,
 };
 
 export default Radio; 

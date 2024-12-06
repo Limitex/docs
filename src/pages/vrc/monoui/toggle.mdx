@@ -20,8 +20,8 @@ Not required.
 <Tree.Container>
   <Tree.Root defaultExpanded>
     <Tree.Item name="Canvas" type={Box}>
-      {Toggle.Default(false).content}
-      {Toggle.Outline(false).content}
+      {Toggle.Default({ defaultExpanded: false }).content}
+      {Toggle.Outline({ defaultExpanded: false }).content}
     </Tree.Item>
   </Tree.Root>
 </Tree.Container>

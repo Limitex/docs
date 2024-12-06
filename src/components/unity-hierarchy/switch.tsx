@@ -1,12 +1,8 @@
 import { Box, Package } from "lucide-react";
-import Tree from "../tree";
+import Tree, { TreeItemProps } from "../tree";
 import type { ComponentResult } from "./type";
 
-type SwitchProps = {
-  name?: string;
-};
-
-const SwitchDefault = (defaultExpanded: boolean = true, props: SwitchProps = {}): ComponentResult => {
+const SwitchDefault = (props: Partial<TreeItemProps> = {}): ComponentResult => {
   const displayName = props.name ?? "Switch";
 
   return {
@@ -18,8 +14,8 @@ const SwitchDefault = (defaultExpanded: boolean = true, props: SwitchProps = {})
       dependencies: [],
     },
     content: (
-      <Tree.Item name={displayName} type={Package} defaultExpanded={defaultExpanded}>
-        <Tree.Item name="Disabled" type={Box} defaultExpanded={defaultExpanded}>
+      <Tree.Item name={displayName} type={Package} {...props}>
+        <Tree.Item name="Disabled" type={Box}>
           <Tree.Item name="Enabled" type={Box} />
         </Tree.Item>
       </Tree.Item>
@@ -27,14 +23,8 @@ const SwitchDefault = (defaultExpanded: boolean = true, props: SwitchProps = {})
   };
 };
 
-const createSwitchWithDefault = (
-  switchFn: (defaultExpanded: boolean, props?: SwitchProps) => ComponentResult
-) => {
-  return (defaultExpanded: boolean = true, props?: SwitchProps) => switchFn(defaultExpanded, props);
-};
-
-const Switch: Record<string, (defaultExpanded?: boolean, props?: SwitchProps) => ComponentResult> = {
-  Default: createSwitchWithDefault(SwitchDefault),
+const Switch: Record<string, (props?: Partial<TreeItemProps>) => ComponentResult> = {
+  Default: SwitchDefault,
 };
 
 export default Switch; 

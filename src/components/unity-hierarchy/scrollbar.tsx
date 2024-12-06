@@ -1,12 +1,8 @@
 import { Box, Package } from "lucide-react";
-import Tree from "../tree";
+import Tree, { TreeItemProps } from "../tree";
 import type { ComponentResult } from "./type";
 
-type ScrollbarProps = {
-  name?: string;
-};
-
-const ScrollbarDefault = (defaultExpanded: boolean = true, props: ScrollbarProps = {}): ComponentResult => {
+const ScrollbarDefault = (props: Partial<TreeItemProps> = {}): ComponentResult => {
   const displayName = props.name ?? "Scrollbar";
 
   return {
@@ -18,8 +14,8 @@ const ScrollbarDefault = (defaultExpanded: boolean = true, props: ScrollbarProps
       dependencies: [],
     },
     content: (
-      <Tree.Item name={displayName} type={Package} defaultExpanded={defaultExpanded}>
-        <Tree.Item name="Sliding Area" type={Box} defaultExpanded={defaultExpanded}>
+      <Tree.Item name={displayName} type={Package} {...props}>
+        <Tree.Item name="Sliding Area" type={Box}>
           <Tree.Item name="Handle" type={Box} />
         </Tree.Item>
       </Tree.Item>
@@ -27,14 +23,8 @@ const ScrollbarDefault = (defaultExpanded: boolean = true, props: ScrollbarProps
   };
 };
 
-const createScrollbarWithDefault = (
-  scrollbarFn: (defaultExpanded: boolean, props?: ScrollbarProps) => ComponentResult
-) => {
-  return (defaultExpanded: boolean = true, props?: ScrollbarProps) => scrollbarFn(defaultExpanded, props);
-};
-
-const Scrollbar: Record<string, (defaultExpanded?: boolean, props?: ScrollbarProps) => ComponentResult> = {
-  Default: createScrollbarWithDefault(ScrollbarDefault),
+const Scrollbar: Record<string, (props?: Partial<TreeItemProps>) => ComponentResult> = {
+  Default: ScrollbarDefault,
 };
 
 export default Scrollbar; 

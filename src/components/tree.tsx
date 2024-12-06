@@ -8,7 +8,7 @@ import React, {
   useEffect,
   Children,
 } from "react";
-import { ChevronRight, ChevronDown } from "lucide-react";
+import { ChevronRight, ChevronDown, LucideIcon } from "lucide-react";
 
 const MAX_TREE_DEPTH = 10;
 const PADDING_STEP = 20;
@@ -25,14 +25,14 @@ type TreeRootProps = {
   defaultExpanded?: boolean;
 };
 
-type TreeItemProps = {
-  name: string;
-  type?: IconComponentType;
+export type TreeItemProps = {
   children?: React.ReactNode;
+  name: string;
+  type: LucideIcon;
   onClick?: () => void;
+  defaultExpanded?: boolean;
   className?: string;
   itemClassName?: string;
-  defaultExpanded?: boolean;
   disabled?: boolean;
   variant?: ColorVariant;
 };

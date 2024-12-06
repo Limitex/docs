@@ -1,14 +1,9 @@
 import { Package } from "lucide-react";
 import Tree from "../tree";
 import type { ComponentResult } from "./type";
+import type { TreeItemProps } from "../tree";
 
-type CanvasProps = {
-  name?: string;
-};
-
-const CanvasDefault = (defaultExpanded: boolean = true, props: CanvasProps = {}): ComponentResult => {
-  const displayName = props.name ?? "Canvas";
-
+const CanvasDefault = (props: Partial<TreeItemProps> = {}): ComponentResult => {
   return {
     data: {
       title: "Canvas",
@@ -17,18 +12,18 @@ const CanvasDefault = (defaultExpanded: boolean = true, props: CanvasProps = {})
       assetsPath: "/Packages/Mono UI/Runtime/Assets/Prefab/Layout/Canvas.prefab",
       dependencies: [],
     },
-    content: <Tree.Item name={displayName} type={Package} defaultExpanded={defaultExpanded} />,
+    content: (
+      <Tree.Item 
+        name={props.name ?? "Canvas"}
+        type={Package}
+        {...props}
+      />
+    ),
   };
 };
 
-const createCanvasWithDefault = (
-  canvasFn: (defaultExpanded: boolean, props?: CanvasProps) => ComponentResult
-) => {
-  return (defaultExpanded: boolean = true, props?: CanvasProps) => canvasFn(defaultExpanded, props);
-};
-
-const Canvas: Record<string, (defaultExpanded?: boolean, props?: CanvasProps) => ComponentResult> = {
-  Default: createCanvasWithDefault(CanvasDefault),
+const Canvas: Record<string, (props?: Partial<TreeItemProps>) => ComponentResult> = {
+  Default: CanvasDefault,
 };
 
 export default Canvas; 

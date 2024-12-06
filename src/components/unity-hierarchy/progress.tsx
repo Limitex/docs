@@ -1,12 +1,8 @@
 import { Box, Package } from "lucide-react";
-import Tree from "../tree";
+import Tree, { TreeItemProps } from "../tree";
 import type { ComponentResult } from "./type";
 
-type ProgressProps = {
-  name?: string;
-};
-
-const ProgressDefault = (defaultExpanded: boolean = true, props: ProgressProps = {}): ComponentResult => {
+const ProgressDefault = (props: Partial<TreeItemProps> = {}): ComponentResult => {
   const displayName = props.name ?? "Progress";
 
   return {
@@ -18,8 +14,8 @@ const ProgressDefault = (defaultExpanded: boolean = true, props: ProgressProps =
       dependencies: [],
     },
     content: (
-      <Tree.Item name={displayName} type={Package} defaultExpanded={defaultExpanded}>
-        <Tree.Item name="Fill Area" type={Box} defaultExpanded={defaultExpanded}>
+      <Tree.Item name={displayName} type={Package} {...props}>
+        <Tree.Item name="Fill Area" type={Box}>
           <Tree.Item name="Fill" type={Box} />
         </Tree.Item>
       </Tree.Item>
@@ -27,14 +23,8 @@ const ProgressDefault = (defaultExpanded: boolean = true, props: ProgressProps =
   };
 };
 
-const createProgressWithDefault = (
-  progressFn: (defaultExpanded: boolean, props?: ProgressProps) => ComponentResult
-) => {
-  return (defaultExpanded: boolean = true, props?: ProgressProps) => progressFn(defaultExpanded, props);
-};
-
-const Progress: Record<string, (defaultExpanded?: boolean, props?: ProgressProps) => ComponentResult> = {
-  Default: createProgressWithDefault(ProgressDefault),
+const Progress: Record<string, (props?: Partial<TreeItemProps>) => ComponentResult> = {
+  Default: ProgressDefault,
 };
 
 export default Progress;

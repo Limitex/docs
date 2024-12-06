@@ -1,12 +1,8 @@
 import { Package } from "lucide-react";
-import Tree from "../tree";
+import Tree, { TreeItemProps } from "../tree";
 import type { ComponentResult } from "./type";
 
-type SpanProps = {
-  name?: string;
-};
-
-const SpanDefault = (defaultExpanded: boolean = true, props: SpanProps = {}): ComponentResult => {
+const SpanDefault = (props: Partial<TreeItemProps> = {}): ComponentResult => {
   const displayName = props.name ?? "Span";
   
   return {
@@ -17,18 +13,12 @@ const SpanDefault = (defaultExpanded: boolean = true, props: SpanProps = {}): Co
       assetsPath: "/Packages/Mono UI/Runtime/Assets/Prefab/Components/Span.prefab",
       dependencies: [],
     },
-    content: <Tree.Item name={displayName} type={Package} defaultExpanded={defaultExpanded} />,
+    content: <Tree.Item name={displayName} type={Package} {...props} />,
   };
 };
 
-const createSpanWithDefault = (
-  spanFn: (defaultExpanded: boolean, props?: SpanProps) => ComponentResult
-) => {
-  return (defaultExpanded: boolean = true, props?: SpanProps) => spanFn(defaultExpanded, props);
-};
-
-const Span: Record<string, (defaultExpanded?: boolean, props?: SpanProps) => ComponentResult> = {
-  Default: createSpanWithDefault(SpanDefault),
+const Span: Record<string, (props?: Partial<TreeItemProps>) => ComponentResult> = {
+  Default: SpanDefault,
 };
 
 export default Span; 

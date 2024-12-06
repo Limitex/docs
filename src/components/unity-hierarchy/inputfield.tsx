@@ -1,15 +1,11 @@
 import { Box, Package } from "lucide-react";
-import Tree from "../tree";
+import Tree, { TreeItemProps } from "../tree";
 import Text from "./text";
 import type { ComponentResult } from "./type";
 
-type InputFieldProps = {
-  name?: string;
-};
-
-const InputFieldDefault = (defaultExpanded: boolean = true, props: InputFieldProps = {}): ComponentResult => {
-  const InputText = Text.H5(defaultExpanded);
-  const PlaceholderText = Text.H5(defaultExpanded, { name: "Placeholder - Text h5 (TMP)" });
+const InputFieldDefault = (props: Partial<TreeItemProps> = {}): ComponentResult => {
+  const InputText = Text.H5();
+  const PlaceholderText = Text.H5({ name: "Placeholder - Text h5 (TMP)" });
   const displayName = props.name ?? "InputField";
 
   return {
@@ -21,9 +17,9 @@ const InputFieldDefault = (defaultExpanded: boolean = true, props: InputFieldPro
       dependencies: [InputText.data],
     },
     content: (
-      <Tree.Item name={displayName} type={Package} defaultExpanded={defaultExpanded}>
+      <Tree.Item name={displayName} type={Package} {...props}>
         <Tree.Item name="Outline" type={Box} />
-        <Tree.Item name="Text Area" type={Box} defaultExpanded={defaultExpanded}>
+        <Tree.Item name="Text Area" type={Box}>
           {PlaceholderText.content}
           {InputText.content}
         </Tree.Item>
@@ -32,14 +28,8 @@ const InputFieldDefault = (defaultExpanded: boolean = true, props: InputFieldPro
   };
 };
 
-const createInputFieldWithDefault = (
-  inputFieldFn: (defaultExpanded: boolean, props?: InputFieldProps) => ComponentResult
-) => {
-  return (defaultExpanded: boolean = true, props?: InputFieldProps) => inputFieldFn(defaultExpanded, props);
-};
-
-const InputField: Record<string, (defaultExpanded?: boolean, props?: InputFieldProps) => ComponentResult> = {
-  Default: createInputFieldWithDefault(InputFieldDefault),
+const InputField: Record<string, (props?: Partial<TreeItemProps>) => ComponentResult> = {
+  Default: InputFieldDefault,
 };
 
 export default InputField;
