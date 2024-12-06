@@ -2,7 +2,8 @@
   "scripts": {
     "dev": "next",
     "build": "next build",
-    "start": "next start"
+    "start": "next start",
+    "serve": "pnpm dlx serve@latest out"
   },
   "dependencies": {
     "@nextui-org/card": "^2.0.34",
