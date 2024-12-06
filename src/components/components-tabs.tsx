@@ -33,11 +33,15 @@ const DependencyCard: React.FC<{ dependency: ComponentData }> = ({ dependency })
 };
 
 const ComponentsTabs: React.FC<ComponentsTabsProps> = ({
-  component,
+  component = undefined,
   showCanvas = true
 }) => {
-  const { data, content } = component;
-  const { img, assetsPath, dependencies = [] } = data;
+  const { data, content } = component ?? { data: undefined, content: undefined };
+  const { img, assetsPath, dependencies = [] } = data ?? {
+    img: undefined,
+    assetsPath: undefined,
+    dependencies: []
+  };
 
   return (
     <div className="py-5">
