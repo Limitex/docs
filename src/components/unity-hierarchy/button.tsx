@@ -87,6 +87,7 @@ const ButtonOutline = (defaultExpanded: boolean = true, props: ButtonProps = {})
     },
     content: (
       <Tree.Item name={displayName} type={Package} defaultExpanded={defaultExpanded} variant={variant}>
+        <Tree.Item name="Outline" type={Box} />
         {TextH5.content}
       </Tree.Item>
     ),
