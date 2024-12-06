@@ -5,7 +5,7 @@ const SITE_CONFIG = {
   default: {
     title: 'Limitex Docs',
     description: 'Developer Documentation by Limitex',
-    ogImage: 'https://docs.limitex.dev/ogp.png',
+    ogImage: `${process.env.NEXT_PUBLIC_SITE_URL}/ogp.png`,
     keywords: 'Documentation, Limitex, Unity, VRChat, UI Framework'
   },
   paths: [
@@ -14,7 +14,7 @@ const SITE_CONFIG = {
       config: {
         title: 'MonoUI Documentation',
         description: 'UI Framework MonoUI Documentation for VRChat',
-        ogImage: 'https://docs.limitex.dev/ogp-monoui.png',
+        ogImage: `${process.env.NEXT_PUBLIC_SITE_URL}/ogp-monoui.png`,
         keywords: 'MonoUI, VRChat, UI Framework, Unity, Documentation'
       }
     }
@@ -40,7 +40,7 @@ export default {
   head: () => {
     const { asPath } = useRouter()
     const { frontMatter } = useConfig()
-    const url = `https://docs.limitex.dev${asPath}`
+    const url = `${process.env.NEXT_PUBLIC_SITE_URL}${asPath}`
     const config = getPageConfig(asPath, frontMatter)
 
     return (
