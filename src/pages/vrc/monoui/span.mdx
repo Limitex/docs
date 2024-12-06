@@ -1,1 +1,33 @@
+import Image from "next/image";
+import { Tabs, Cards } from "nextra/components";
+import { Box, Package } from "lucide-react";
+import Tree from "../../../components/tree.tsx";
+import ComponentsTabs from "../../../components/components-tabs.tsx";
+import Span from "../../../components/unity-hierarchy/span.tsx";
+
 # Span
+
+Used to create spacing between UI elements. The Span component helps maintain consistent spacing and layout in your UI design.
+
+<ComponentsTabs component={Span.Default()} />
+
+## Installation
+
+Not required.
+
+## Usage
+
+<Tree.Container>
+  <Tree.Root defaultExpanded>
+    <Tree.Item name="Canvas" type={Box}>
+      {Span.Default(false).content}
+      {Span.Default(false).content}
+    </Tree.Item>
+  </Tree.Root>
+</Tree.Container>
+
+## Examples
+
+### Primary
+
+<ComponentsTabs component={Span.Default()} />
