@@ -5,6 +5,7 @@ module.exports = {
     "./src/app/**/*.{js,jsx,ts,tsx,md,mdx}",
     "./src/pages/**/*.{js,jsx,ts,tsx,md,mdx}",
     "./src/components/**/*.{js,jsx,ts,tsx,md,mdx}",
+    "./node_modules/nextra-theme-docs/**/*.{js,jsx,ts,tsx,md,mdx}",
   ],
   theme: {
     extend: {
@@ -12,8 +13,8 @@ module.exports = {
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
         ring: "hsl(var(--ring))",
-        background: "hsl(var(--background))",
-        foreground: "hsl(var(--foreground))",
+        background: "rgb(var(--nextra-bg-primary) / <alpha-value>)",
+        foreground: "rgb(var(--nextra-fg-primary) / <alpha-value>)",
         primary: {
           DEFAULT: "hsl(var(--primary))",
           foreground: "hsl(var(--primary-foreground))",
@@ -39,8 +40,8 @@ module.exports = {
           foreground: "hsl(var(--popover-foreground))",
         },
         card: {
-          DEFAULT: "hsl(var(--card))",
-          foreground: "hsl(var(--card-foreground))",
+          DEFAULT: "rgb(var(--nextra-card-bg) / <alpha-value>)",
+          foreground: "rgb(var(--nextra-fg-primary) / <alpha-value>)",
         },
       },
       borderRadius: {
