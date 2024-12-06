@@ -33,6 +33,10 @@ export default {
   slider: "Slider",
   span: "Span",
   switch: "Switch",
+  "--- Components 2": {
+    type: "separator",
+    title: "Components 2",
+  },
   dialog: "Dialog",
   toast: "Toast",
   "--- More": {

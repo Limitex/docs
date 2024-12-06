@@ -1,1 +1,52 @@
+import Image from "next/image";
+import { Tabs, Cards } from "nextra/components";
+import { Box, Package } from "lucide-react";
+import Tree from "../../../components/tree.tsx";
+import ComponentsTabs from "../../../components/components-tabs.tsx";
+import Button from "../../../components/unity-hierarchy/button.tsx";
+
 # Button
+
+Displays a button or a component that looks like a button.
+
+<ComponentsTabs component={Button.Default()} />
+
+## Installation
+
+Not required.
+
+## Usage
+
+<Tree.Container>
+  <Tree.Root defaultExpanded>
+    <Tree.Item name="Canvas" type={Box}>
+      {Button.Default({ defaultExpanded: false }).content}
+      {Button.Secondary({ defaultExpanded: false }).content}
+      {Button.Destructive({ defaultExpanded: false }).content}
+      {Button.Outline({ defaultExpanded: false }).content}
+      {Button.Ghost({ defaultExpanded: false }).content}
+    </Tree.Item>
+  </Tree.Root>
+</Tree.Container>
+
+## Examples
+
+### Primary
+
+<ComponentsTabs component={Button.Default()} />
+
+### Secondary
+
+<ComponentsTabs component={Button.Secondary()} />
+
+### Destructive
+
+<ComponentsTabs component={Button.Destructive()} />
+
+### Outline
+
+<ComponentsTabs component={Button.Outline()} />
+
+### Ghost
+
+<ComponentsTabs component={Button.Ghost()} />

@@ -1,1 +1,32 @@
+import Image from "next/image";
+import { Tabs, Cards } from "nextra/components";
+import { Box, Package } from "lucide-react";
+import Tree from "../../../components/tree.tsx";
+import ComponentsTabs from "../../../components/components-tabs.tsx";
+import Scrollbar from "../../../components/unity-hierarchy/scrollbar.tsx";
+
 # Scrollbar
+
+Displays a scrollbar or a component that looks like a scrollbar.
+
+<ComponentsTabs component={Scrollbar.Default()} />
+
+## Installation
+
+Not required.
+
+## Usage
+
+<Tree.Container>
+  <Tree.Root defaultExpanded>
+    <Tree.Item name="Canvas" type={Box}>
+      {Scrollbar.Default({ defaultExpanded: false }).content}
+    </Tree.Item>
+  </Tree.Root>
+</Tree.Container>
+
+## Examples
+
+### Primary
+
+<ComponentsTabs component={Scrollbar.Default()} />

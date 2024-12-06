@@ -1,1 +1,56 @@
+import Image from "next/image";
+import { Steps, Tabs, Cards, Callout } from "nextra/components";
+import { Box, Package } from "lucide-react";
+import Tree from "../../../components/tree.tsx";
+import ComponentsTabs from "../../../components/components-tabs.tsx";
+import Toast from "../../../components/unity-hierarchy/toast.tsx";
+import Button from "../../../components/unity-hierarchy/button.tsx";
+
 # Toast
+
+Displays a toast notification or a component that looks like a toast notification.
+
+<ComponentsTabs component={Toast.Default()} />
+
+## Installation
+
+### Place the toast provider
+
+Place the Toast Provider component directly under the Canvas component in your Unity hierarchy.
+
+<Callout>
+  For proper functionality, the Toast Provider must be placed as an immediate child of the Canvas component.
+</Callout>
+
+<Tree.Container>
+  <Tree.Root defaultExpanded>
+    <Tree.Item name="Canvas" type={Box} >
+      {Toast.Default({ defaultExpanded: false, variant: "highlight" }).content}
+    </Tree.Item>
+  </Tree.Root>
+</Tree.Container>
+
+## Usage
+
+<Steps>
+
+### Add the provider to the button's OnClick
+
+Add the provider to the button's OnClick and set `MonoUI_Toast_isTrigger` in Animator.SetTrigger (string) to call the toast.
+
+<Tree.Container>
+  <Tree.Root defaultExpanded>
+    <Tree.Item name="Canvas" type={Box}>
+      {Button.Default({ defaultExpanded: false, variant: "highlight" }).content}
+      {Toast.Default({ defaultExpanded: false }).content}
+    </Tree.Item>
+  </Tree.Root>
+</Tree.Container>
+
+</Steps>
+
+## Examples
+
+### Primary
+
+<ComponentsTabs component={Toast.Default()} />

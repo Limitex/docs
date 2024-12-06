@@ -1,1 +1,32 @@
+import Image from "next/image";
+import { Tabs, Cards } from "nextra/components";
+import { Box, Package } from "lucide-react";
+import Tree from "../../../components/tree.tsx";
+import ComponentsTabs from "../../../components/components-tabs.tsx";
+import ScrollView from "../../../components/unity-hierarchy/scrollview.tsx";
+
 # Scroll View
+
+Displays a scrollable content area or a component that looks like a scroll view.
+
+<ComponentsTabs component={ScrollView.Default()} />
+
+## Installation
+
+Not required.
+
+## Usage
+
+<Tree.Container>
+  <Tree.Root defaultExpanded>
+    <Tree.Item name="Canvas" type={Box}>
+      {ScrollView.Default({ defaultExpanded: false }).content}
+    </Tree.Item>
+  </Tree.Root>
+</Tree.Container>
+
+## Examples
+
+### Primary
+
+<ComponentsTabs component={ScrollView.Default()} />

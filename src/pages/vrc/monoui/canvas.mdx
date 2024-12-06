@@ -1,1 +1,28 @@
+import Image from "next/image";
+import { Tabs, Cards } from "nextra/components";
+import { Box, Package } from "lucide-react";
+import Tree from "../../../components/tree.tsx";
+import ComponentsTabs from "../../../components/components-tabs.tsx";
+import Canvas from "../../../components/unity-hierarchy/canvas.tsx";
+
 # Canvas
+
+A fundamental component for UI layouts using Unity's Canvas component.
+
+<ComponentsTabs component={Canvas.Default()} showCanvas={false} />
+
+## Installation
+
+Not required.
+
+## Usage
+
+<Tree.Container>
+  <Tree.Root defaultExpanded>
+    {Canvas.Default({ defaultExpanded: false }).content}
+  </Tree.Root>
+</Tree.Container>
+
+## Examples
+
+<ComponentsTabs component={Canvas.Default()} showCanvas={false} />

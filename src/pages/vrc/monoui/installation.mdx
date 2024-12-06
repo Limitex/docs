@@ -1,5 +1,146 @@
+import { Steps, Tabs, Callout } from "nextra/components";
+import { CirclePlus, ChevronDown } from "lucide-react";
 import VPMRepositoryLink from "../../../components/vpm-repository-link.tsx";
 
 # Installation
 
-<VPMRepositoryLink> Add to VCC </VPMRepositoryLink>
+Learn how to install packages using the VRChat Creator Companion (VCC).
+
+<Steps>
+
+## Add Repository
+
+First, you need to add the package repository to VCC.
+
+<Tabs items={["Automatic", "Manual"]}>
+  <Tabs.Tab>
+
+    Clicking the button below will automatically launch VCC and display the repository addition dialog. If VCC is not running, it will start automatically.
+
+    Click "I Understand, Add repository" to confirm and save the repository.
+
+    <div className="my-4">
+      <VPMRepositoryLink> Add to VCC </VPMRepositoryLink>
+    </div>
+
+  </Tabs.Tab>
+  <Tabs.Tab>
+
+    If you need to add the repository manually, follow these steps:
+
+    1. Open VCC and navigate to the "Settings" tab.
+    2. Select the "Package" section in the settings menu.
+    3. Click "Add Repository" to display the repository input field.
+    4. Enter the following repository URL:
+
+    ```
+    https://docs.limitex.dev/vpm.json
+    ```
+
+    4. Click "I Understand, Add repository" to confirm and save the repository.
+
+  </Tabs.Tab>
+</Tabs>
+
+## Add Packages to Your Project
+
+Once you've added the repository, you can install packages by following these steps:
+
+1. Open VCC and navigate to the "Project" tab.
+2. Locate your target **world** project.
+3. Click "Manage Project" to access the package management screen.
+4. Locate for the **Mono UI** package.
+5. Click the <CirclePlus className="inline mx-1 mb-1" /> button next to the package to install it.
+
+## Import Text Mesh Pro \(TMP\)
+
+The **Mono UI** package requires Text Mesh Pro (TMP) to function correctly. If you haven't already imported TMP, follow these steps:
+
+1. Open Unity Editor.
+2. Navigate to the "Window" menu.
+3. Locate "TextMeshPro" menu to open the sub menu.
+4. Click "Import TMP Essential Resources" to import the necessary assets.
+
+</Steps>
+
+## Installing Pre-release Versions
+
+To install pre-release versions (such as beta or alpha releases), follow these steps:
+
+<Steps>
+
+### Enable Pre-releases
+
+1. Open VCC and navigate to the "Settings" tab.
+2. Select the "Package" section in the settings menu.
+3. Toggle "Show Pre-releases Packages" to enable pre-release package visibility.
+
+### Select Pre-release Version
+
+1. Navigate to the "Project" tab at the top of VCC and locate your target world project.
+2. Click "Manage Project" to access the package management screen.
+3. Search for the **MonoUI** package in the package list.
+4. Click the <ChevronDown className="inline mx-1" /> button next to the package.
+5. In the dropdown menu, select your desired pre-release version.
+
+<Callout type="info">
+  Pre-release versions are marked with tags like `-a.1` (alpha), `-b.2` (beta),
+  or `-rc.3` (release candidate).
+</Callout>
+
+</Steps>
+
+## Updating Versions
+
+To change the version of an installed package:
+
+1. Open VCC and navigate to the "Project" tab.
+2. Locate your target **world** project.
+3. Click "Manage Project" to access the package management screen.
+4. Locate the **Mono UI** package in the package list.
+5. Click the <ChevronDown className="inline mx-1" /> button next to the current version number.
+6. Choose your desired version from the dropdown menu.
+
+## Troubleshooting
+
+If you encounter issues while adding packages or changing versions:
+
+### Common Issues and Solutions
+
+1. **Repository Not Found**
+
+   - Verify the repository URL is correct
+   - Check your internet connection
+   - Try removing and re-adding the repository
+
+2. **Package Installation Fails**
+
+   - Close Unity Editor
+   - Restart VCC
+   - Try installing again
+
+3. **Version Conflicts**
+   - Check compatibility with your Unity version
+   - Ensure all dependencies are met
+   - Consider upgrading other packages
+
+### Basic Checks
+
+- Ensure VCC is updated to the latest version
+- Verify your internet connection is stable
+- Close and reopen your project
+- Restart VCC
+
+### Advanced Steps
+
+1. Remove and re-add the repository in Settings
+2. Clear VCC's cache and restart the application
+3. Close Unity Editor completely before retrying
+4. Check your project's manifest.json for any conflicts
+
+### Get Support
+
+For additional support:
+
+- Visit our [Documentation](https://docs.limitex.dev/)
+- Submit issues on [GitHub](https://github.com/limitex/mono-ui/issues)

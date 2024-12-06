@@ -1,1 +1,33 @@
+import Image from "next/image";
+import { Tabs, Cards } from "nextra/components";
+import { Box, Package } from "lucide-react";
+import Tree from "../../../components/tree.tsx";
+import ComponentsTabs from "../../../components/components-tabs.tsx";
+import Slider from "../../../components/unity-hierarchy/slider.tsx";
+
 # Slider
+
+Displays a slider or a component that looks like a slider.
+
+<ComponentsTabs component={Slider.Default()} />
+
+## Installation
+
+Not required.
+
+## Usage
+
+<Tree.Container>
+  <Tree.Root defaultExpanded>
+    <Tree.Item name="Canvas" type={Box}>
+      {Slider.Default({ defaultExpanded: false }).content}
+      {Slider.Default({ defaultExpanded: false }).content}
+    </Tree.Item>
+  </Tree.Root>
+</Tree.Container>
+
+## Examples
+
+### Primary
+
+<ComponentsTabs component={Slider.Default()} />

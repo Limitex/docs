@@ -1,1 +1,61 @@
+import Image from "next/image";
+import { Tabs, Cards } from "nextra/components";
+import { Box, Package } from "lucide-react";
+import Tree from "../../../components/tree.tsx";
+import ComponentsTabs from "../../../components/components-tabs.tsx";
+import Text from "../../../components/unity-hierarchy/text.tsx";
+
 # Text
+
+Displays a text or a component that looks like a text.
+
+<ComponentsTabs component={Text.Default()} />
+
+## Installation
+
+Not required.
+
+## Usage
+<Tree.Container>
+  <Tree.Root defaultExpanded>
+    <Tree.Item name="Canvas" type={Box}>
+      {Text.Default({ defaultExpanded: false }).content}
+      {Text.H1({ defaultExpanded: false }).content}
+      {Text.H2({ defaultExpanded: false }).content}
+      {Text.H3({ defaultExpanded: false }).content}
+      {Text.H4({ defaultExpanded: false }).content}
+      {Text.H5({ defaultExpanded: false }).content}
+      {Text.H6({ defaultExpanded: false }).content}
+    </Tree.Item>
+  </Tree.Root>
+</Tree.Container>
+
+## Examples
+
+### Text \(TMP\)
+
+<ComponentsTabs component={Text.Default()} />
+
+### Text h1 \(TMP\)
+
+<ComponentsTabs component={Text.H1()} />
+
+### Text h2 \(TMP\)
+
+<ComponentsTabs component={Text.H2()} />
+
+### Text h3 \(TMP\)
+
+<ComponentsTabs component={Text.H3()} />
+
+### Text h4 \(TMP\)
+
+<ComponentsTabs component={Text.H4()} />
+
+### Text h5 \(TMP\)
+
+<ComponentsTabs component={Text.H5()} />
+
+### Text h6 \(TMP\)
+
+<ComponentsTabs component={Text.H6()} />

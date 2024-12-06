@@ -1,1 +1,37 @@
+import Image from "next/image";
+import { Tabs, Cards } from "nextra/components";
+import { Box, Package } from "lucide-react";
+import Tree from "../../../components/tree.tsx";
+import ComponentsTabs from "../../../components/components-tabs.tsx";
+import Toggle from "../../../components/unity-hierarchy/toggle.tsx";
+
 # Toggle
+
+Displays a toggle or a component that looks like a toggle.
+
+<ComponentsTabs component={Toggle.Default()} />
+
+## Installation
+
+Not required.
+
+## Usage
+
+<Tree.Container>
+  <Tree.Root defaultExpanded>
+    <Tree.Item name="Canvas" type={Box}>
+      {Toggle.Default({ defaultExpanded: false }).content}
+      {Toggle.Outline({ defaultExpanded: false }).content}
+    </Tree.Item>
+  </Tree.Root>
+</Tree.Container>
+
+## Examples
+
+### Primary
+
+<ComponentsTabs component={Toggle.Default()} />
+
+### Outline
+
+<ComponentsTabs component={Toggle.Outline()} />
