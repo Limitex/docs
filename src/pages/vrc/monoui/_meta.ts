@@ -10,6 +10,7 @@ export default {
     title: "Examples",
   },
   uisample: "UI Sample",
+  quizmenu: "Quiz Menu",
   "--- Layout": {
     type: "separator",
     title: "Layout",
