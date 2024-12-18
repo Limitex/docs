@@ -6,7 +6,7 @@ import type { TreeItemProps } from "../tree";
 const TextDefault = (props: Partial<TreeItemProps> = {}): ComponentResult => {
   const { name, ...restProps } = props;
   const displayName = name ?? "Text (TMP)";
-  const assetsPath = `/Packages/Mono UI/Runtime/Assets/Prefab/Components/Text/${name}.prefab`;
+  const assetsPath = `/Packages/Mono UI/Runtime/Assets/Prefab/Components/Text/${displayName}.prefab`;
   const contextMenuPath = "GameObject/Mono UI/Text/" + displayName;
 
   return {
