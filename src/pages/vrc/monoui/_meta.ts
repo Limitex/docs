@@ -29,7 +29,6 @@ export default {
   dropdown: "Dropdown",
   inputfield: "InputField",
   progress: "Progress",
-  radio: "Radio",
   scrollview: "Scroll View",
   scrollbar: "Scrollbar",
   slider: "Slider",
