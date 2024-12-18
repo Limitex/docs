@@ -8,14 +8,15 @@ const ButtonDefault = (props: Partial<TreeItemProps> = {}): ComponentResult => {
   const { name, ...restProps } = props;
   const TextH5 = Text.H5();
   const displayName = ("Button " + (name ?? "")).trim();
+  const assetsPath = `/Packages/Mono UI/Runtime/Assets/Prefab/Components/Button/${displayName}.prefab`;
   const contextMenuPath = "GameObject/Mono UI/Button/" + (name ?? "Primary");
-  
+
   return {
     data: {
       title: "Button",
       img: "https://via.placeholder.com/500x400",
       href: "/vrc/monoui/button",
-      assetsPath:"/Packages/Mono UI/Runtime/Assets/Prefab/Components/Button/Button.prefab",
+      assetsPath: assetsPath,
       contextMenuPath: contextMenuPath,
       dependencies: [TextH5.data],
     },
