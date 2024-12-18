@@ -5,6 +5,7 @@ export type ComponentData = {
   img: string;
   href: string;
   assetsPath: string;
+  contextMenuPath: string;
   dependencies?: ComponentData[];
 };
 

@@ -11,6 +11,7 @@ const CardDefault = (props: Partial<TreeItemProps> = {}): ComponentResult => {
       img: "https://via.placeholder.com/500x400",
       href: "/vrc/monoui/card",
       assetsPath: "/Packages/Mono UI/Runtime/Assets/Prefab/Components/Card.prefab",
+      contextMenuPath: "GameObject/Mono UI/Card/Card",
       dependencies: [],
     },
     content: (
@@ -31,6 +32,7 @@ const CardOutline = (props: Partial<TreeItemProps> = {}): ComponentResult => {
       img: "https://via.placeholder.com/500x400",
       href: "/vrc/monoui/card",
       assetsPath: "/Packages/Mono UI/Runtime/Assets/Prefab/Components/Card Outline.prefab",
+      contextMenuPath: "GameObject/Mono UI/Card/Card Outline",
       dependencies: [],
     },
     content: (

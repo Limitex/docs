@@ -13,6 +13,7 @@ const ToggleDefault = (props: Partial<TreeItemProps> = {}): ComponentResult => {
       img: "https://via.placeholder.com/500x400",
       href: "/vrc/monoui/toggle",
       assetsPath: "/Packages/Mono UI/Runtime/Assets/Prefab/Components/Toggle/Toggle.prefab",
+      contextMenuPath: "GameObject/Mono UI/Toggle/" + displayName,
       dependencies: [TextH5.data],
     },
     content: (
@@ -38,6 +39,7 @@ const ToggleGroup = (props: Partial<TreeItemProps> = {}): ComponentResult => {
       img: "https://via.placeholder.com/500x400",
       href: "/vrc/monoui/toggle",
       assetsPath: "/Packages/Mono UI/Runtime/Assets/Prefab/Components/Toggle/Toggle Group.prefab",
+      contextMenuPath: "GameObject/Mono UI/Toggle/Toggle Group",
       dependencies: [toggle1.data, toggle2.data, toggle3.data],
     },
     content: (

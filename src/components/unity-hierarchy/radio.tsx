@@ -13,6 +13,7 @@ const RadioDefault = (props: Partial<TreeItemProps> = {}): ComponentResult => {
       img: "https://via.placeholder.com/500x400",
       href: "/vrc/monoui/radio",
       assetsPath: "/Packages/Mono UI/Runtime/Assets/Prefab/Components/Radio.prefab",
+      contextMenuPath: "GameObject/Mono UI/Toggle/Radio Toggle",
       dependencies: [TextH5.data],
     },
     content: (

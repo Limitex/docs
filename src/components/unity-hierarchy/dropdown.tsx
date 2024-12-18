@@ -13,6 +13,7 @@ const DropdownDefault = (props: Partial<TreeItemProps> = {}): ComponentResult =>
       img: "https://via.placeholder.com/500x400",
       href: "/vrc/monoui/dropdown",
       assetsPath: "/Packages/Mono UI/Runtime/Assets/Prefab/Components/Dropdown.prefab",
+      contextMenuPath: "GameObject/Mono UI/Dropdown",
       dependencies: [TextH5.data],
     },
     content: (
