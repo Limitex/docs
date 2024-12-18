@@ -11,6 +11,7 @@ export default {
   },
   uisample: "UI Sample",
   quizmenu: "Quiz Menu",
+  worldlog: "World Log",
   "--- Layout": {
     type: "separator",
     title: "Layout",
