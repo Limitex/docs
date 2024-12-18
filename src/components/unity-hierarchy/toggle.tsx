@@ -6,14 +6,16 @@ import type { ComponentResult } from "./type";
 const ToggleDefault = (props: Partial<TreeItemProps> = {}): ComponentResult => {
   const TextH5 = Text.H5();
   const displayName = props.name ?? "Toggle";
+  const assetsPath = `/Packages/Mono UI/Runtime/Assets/Prefab/Components/Toggle/${displayName}.prefab`;
+  const contextMenuPath = "GameObject/Mono UI/Toggle/" + displayName;
 
   return {
     data: {
       title: "Toggle",
       img: "https://via.placeholder.com/500x400",
       href: "/vrc/monoui/toggle",
-      assetsPath: "/Packages/Mono UI/Runtime/Assets/Prefab/Components/Toggle/Toggle.prefab",
-      contextMenuPath: "GameObject/Mono UI/Toggle/" + displayName,
+      assetsPath: assetsPath,
+      contextMenuPath: contextMenuPath,
       dependencies: [TextH5.data],
     },
     content: (
