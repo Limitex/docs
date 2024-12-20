@@ -5,13 +5,17 @@ import { Box, Package } from "lucide-react";
 import { Code } from "@nextui-org/code";
 import type { ComponentData, ComponentResult } from "./unity-hierarchy/type";
 import Tree from "./tree";
+import { Card, CardBody, Chip } from "@nextui-org/react";
+import { FolderOpen, Menu } from "lucide-react";
 
 type ComponentsTabsProps = {
   component: ComponentResult;
   showCanvas?: boolean;
 };
 
-const DependencyCard: React.FC<{ dependency: ComponentData }> = ({ dependency }) => {
+const DependencyCard: React.FC<{ dependency: ComponentData }> = ({
+  dependency,
+}) => {
   return (
     <div className="flex flex-col gap-2">
       <Cards.Card
@@ -32,20 +36,58 @@ const DependencyCard: React.FC<{ dependency: ComponentData }> = ({ dependency })
   );
 };
 
+const PathDisplay = ({ assetsPath, contextMenuPath }) => {
+  return (
+    <div className="flex flex-col gap-3 mb-6">
+      <div className="flex items-center gap-2 min-w-0">
+        <div className="flex items-center gap-2 flex-shrink-0 w-[100px]">
+          <Menu className="w-4 h-4 text-neutral-500" />
+          <span className="text-sm text-neutral-500 font-medium">Context</span>
+        </div>
+        <div className="overflow-auto flex-1 [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none]">
+          <Code className="text-md bg-neutral-100 dark:bg-neutral-900 w-full whitespace-nowrap">
+            {contextMenuPath || "Not specified"}
+          </Code>
+        </div>
+      </div>
+      <div className="flex items-center gap-2 min-w-0">
+        <div className="flex items-center gap-2 flex-shrink-0 w-[100px]">
+          <FolderOpen className="w-4 h-4 text-neutral-500" />
+          <span className="text-sm text-neutral-500 font-medium">Assets</span>
+        </div>
+        <div className="overflow-auto flex-1 [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none]">
+          <Code className="text-md bg-neutral-100 dark:bg-neutral-900 w-full whitespace-nowrap">
+            {assetsPath || "Not specified"}
+          </Code>
+        </div>
+      </div>
+    </div>
+  );
+};
+
 const ComponentsTabs: React.FC<ComponentsTabsProps> = ({
   component = undefined,
-  showCanvas = true
+  showCanvas = true,
 }) => {
-  const { data, content } = component ?? { data: undefined, content: undefined };
-  const { img, assetsPath, dependencies = [] } = data ?? {
+  const { data, content } = component ?? {
+    data: undefined,
+    content: undefined,
+  };
+  const {
+    img,
+    assetsPath,
+    contextMenuPath,
+    dependencies = [],
+  } = data ?? {
     img: undefined,
     assetsPath: undefined,
-    dependencies: []
+    contextMenuPath: undefined,
+    dependencies: [],
   };
 
   return (
     <div className="py-5">
-      <Code>{assetsPath}</Code>
+      <PathDisplay assetsPath={assetsPath} contextMenuPath={contextMenuPath} />
       <Tabs items={["Preview", "Hierarchy", "Dependencies"]}>
         <Tabs.Tab className="flex justify-center w-full p-4 border rounded-lg lg:px-5 dark:border-neutral-800">
           <Image

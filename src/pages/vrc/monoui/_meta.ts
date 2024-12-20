@@ -10,6 +10,8 @@ export default {
     title: "Examples",
   },
   uisample: "UI Sample",
+  quizmenu: "Quiz Menu",
+  worldlog: "World Log",
   "--- Layout": {
     type: "separator",
     title: "Layout",
@@ -27,7 +29,6 @@ export default {
   dropdown: "Dropdown",
   inputfield: "InputField",
   progress: "Progress",
-  radio: "Radio",
   scrollview: "Scroll View",
   scrollbar: "Scrollbar",
   slider: "Slider",

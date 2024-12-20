@@ -11,6 +11,7 @@ const SliderDefault = (props: Partial<TreeItemProps> = {}): ComponentResult => {
       img: "https://via.placeholder.com/500x400",
       href: "/vrc/monoui/slider",
       assetsPath: "/Packages/Mono UI/Runtime/Assets/Prefab/Components/Slider.prefab",
+      contextMenuPath: "GameObject/Mono UI/Slider",
       dependencies: [],
     },
     content: (

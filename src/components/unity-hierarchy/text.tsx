@@ -4,19 +4,25 @@ import type { ComponentResult } from "./type";
 import type { TreeItemProps } from "../tree";
 
 const TextDefault = (props: Partial<TreeItemProps> = {}): ComponentResult => {
+  const { name, ...restProps } = props;
+  const displayName = name ?? "Text (TMP)";
+  const assetsPath = `/Packages/Mono UI/Runtime/Assets/Prefab/Components/Text/${displayName}.prefab`;
+  const contextMenuPath = "GameObject/Mono UI/Text/" + displayName;
+
   return {
     data: {
       title: "Text (TMP)",
       img: "https://via.placeholder.com/500x400",
       href: "/vrc/monoui/text",
-      assetsPath: "/Packages/Mono UI/Runtime/Assets/Prefab/Components/Text/Text (TMP).prefab",
+      assetsPath: assetsPath,
+      contextMenuPath: contextMenuPath,
       dependencies: [],
     },
     content: (
       <Tree.Item 
-        name={props.name ?? "Text (TMP)"}
+        name={displayName}
         type={Package}
-        {...props}
+        {...restProps}
       >
         <Tree.Item name="Underline" type={Box} />
       </Tree.Item>

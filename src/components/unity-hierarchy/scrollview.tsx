@@ -11,6 +11,7 @@ const ScrollViewDefault = (props: Partial<TreeItemProps> = {}): ComponentResult 
       img: "https://via.placeholder.com/500x400",
       href: "/vrc/monoui/scrollview",
       assetsPath: "/Packages/Mono UI/Runtime/Assets/Prefab/Components/Scroll View.prefab",
+      contextMenuPath: "GameObject/Mono UI/Scroll View",
       dependencies: [],
     },
     content: (

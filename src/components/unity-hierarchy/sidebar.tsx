@@ -51,6 +51,7 @@ const SidebarDefault = (props: Partial<TreeItemProps> = {}): ComponentResult => 
       img: "https://via.placeholder.com/500x400",
       href: "/vrc/monoui/sidebar",
       assetsPath: "/Packages/Mono UI/Runtime/Assets/Prefab/Layout/Sidebar.prefab",
+      contextMenuPath: "GameObject/Mono UI/Sidebar",
       dependencies: [
         leftHeaderText.data,
         leftScrollView.data,

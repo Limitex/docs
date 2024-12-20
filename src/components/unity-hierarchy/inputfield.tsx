@@ -14,6 +14,7 @@ const InputFieldDefault = (props: Partial<TreeItemProps> = {}): ComponentResult 
       img: "https://via.placeholder.com/500x400",
       href: "/vrc/monoui/inputfield",
       assetsPath: "/Packages/Mono UI/Runtime/Assets/Prefab/Components/InputField.prefab",
+      contextMenuPath: "GameObject/Mono UI/InputField",
       dependencies: [InputText.data],
     },
     content: (

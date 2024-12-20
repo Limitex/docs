@@ -11,6 +11,7 @@ const ScrollbarDefault = (props: Partial<TreeItemProps> = {}): ComponentResult =
       img: "https://via.placeholder.com/500x400",
       href: "/vrc/monoui/scrollbar",
       assetsPath: "/Packages/Mono UI/Runtime/Assets/Prefab/Components/Scrollbar.prefab",
+      contextMenuPath: "GameObject/Mono UI/Scrollbar",
       dependencies: [],
     },
     content: (

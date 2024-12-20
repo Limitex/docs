@@ -1,12 +1,32 @@
-# VRChat Packages
-
-Package for VRChat world development with enhanced features and tools.
-
-## Packages
-
+import { Card, CardHeader, CardBody, Link } from "@nextui-org/react";
 import { Package } from "lucide-react";
 import { Cards } from "nextra/components";
 
-<Cards>
-  <Cards.Card icon={<Package />} title="Mono UI" href="/vrc/monoui" />
-</Cards>
+# VRChat Packages
+
+<Card className="my-6 bg-gray-900 h-80">
+  <CardBody className="flex items-center justify-center">
+    <div className="text-6xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-gray-100 via-gray-200 to-gray-400 text-center w-full">
+      <p className="leading-normal">VRChat Packages</p>
+    </div>
+  </CardBody>
+</Card>
+
+## Overview
+
+A collection of packages providing enhanced features and tools for VRChat world development.
+
+## Package List
+
+<div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3 my-6">
+  <Link href="/vrc/monoui">
+    <Card className="w-full h-full p-2 transition-transform">
+      <CardHeader className="flex-col items-start pb-0">
+        <h2 className="text-2xl font-bold text-blue-500">Mono UI</h2>
+      </CardHeader>
+      <CardBody className="overflow-visible text-gray-600 dark:text-gray-400">
+        A modern UI framework for VRChat worlds.
+      </CardBody>
+    </Card>
+  </Link>
+</div>

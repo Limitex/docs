@@ -17,6 +17,7 @@ const DialogDefault = (props: Partial<TreeItemProps> = {}): ComponentResult => {
       img: "https://via.placeholder.com/500x400",
       href: "/vrc/monoui/dialog",
       assetsPath: "/Packages/Mono UI/Runtime/Assets/Prefab/Components 2/Dialog.prefab",
+      contextMenuPath: "GameObject/Mono UI/Provider/Dialog",
       dependencies: [Title.data, Description.data, CancelButton.data, ContinueButton.data],
     },
     content: (

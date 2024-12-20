@@ -16,6 +16,7 @@ const ToastDefault = (props: Partial<TreeItemProps> = {}): ComponentResult => {
       img: "https://via.placeholder.com/500x400",
       href: "/vrc/monoui/toast",
       assetsPath: "/Packages/Mono UI/Runtime/Assets/Prefab/Components 2/Toast.prefab",
+      contextMenuPath: "GameObject/Mono UI/Provider/Toast",
       dependencies: [TextH5.data, TextH6.data, ButtonOutline.data],
     },
     content: (

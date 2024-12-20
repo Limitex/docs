@@ -11,6 +11,7 @@ const ProgressDefault = (props: Partial<TreeItemProps> = {}): ComponentResult =>
       img: "https://via.placeholder.com/500x400",
       href: "/vrc/monoui/progress",
       assetsPath: "/Packages/Mono UI/Runtime/Assets/Prefab/Components/Progress.prefab",
+      contextMenuPath: "GameObject/Mono UI/Progress",
       dependencies: [],
     },
     content: (
