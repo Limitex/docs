@@ -24,7 +24,7 @@ const DependencyCard: React.FC<{ dependency: ComponentData }> = ({
         href={dependency.href}
       />
       {dependency.dependencies && dependency.dependencies.length > 0 && (
-        <div className="ml-4 pl-4 border-l dark:border-neutral-800">
+        <div className="pl-4 ml-4 border-l dark:border-neutral-800">
           <div className="flex flex-col gap-2">
             {dependency.dependencies.map((dep) => (
               <DependencyCard key={dep.href} dependency={dep} />
@@ -39,24 +39,24 @@ const DependencyCard: React.FC<{ dependency: ComponentData }> = ({
 const PathDisplay = ({ assetsPath, contextMenuPath }) => {
   return (
     <div className="flex flex-col gap-3 mb-6">
-      <div className="flex items-center gap-2 min-w-0">
+      <div className="flex items-center min-w-0 gap-2">
         <div className="flex items-center gap-2 flex-shrink-0 w-[100px]">
           <Menu className="w-4 h-4 text-neutral-500" />
-          <span className="text-sm text-neutral-500 font-medium">Context</span>
+          <span className="text-sm font-medium text-neutral-500">Context</span>
         </div>
         <div className="overflow-auto flex-1 [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none]">
-          <Code className="text-md bg-neutral-100 dark:bg-neutral-900 w-full whitespace-nowrap">
+          <Code className="w-full text-md bg-neutral-100 dark:bg-neutral-900 whitespace-nowrap">
             {contextMenuPath || "Not specified"}
           </Code>
         </div>
       </div>
-      <div className="flex items-center gap-2 min-w-0">
+      <div className="flex items-center min-w-0 gap-2">
         <div className="flex items-center gap-2 flex-shrink-0 w-[100px]">
           <FolderOpen className="w-4 h-4 text-neutral-500" />
-          <span className="text-sm text-neutral-500 font-medium">Assets</span>
+          <span className="text-sm font-medium text-neutral-500">Assets</span>
         </div>
         <div className="overflow-auto flex-1 [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none]">
-          <Code className="text-md bg-neutral-100 dark:bg-neutral-900 w-full whitespace-nowrap">
+          <Code className="w-full text-md bg-neutral-100 dark:bg-neutral-900 whitespace-nowrap">
             {assetsPath || "Not specified"}
           </Code>
         </div>
