@@ -44,10 +44,12 @@ const PathDisplay = ({ assetsPath, contextMenuPath }) => {
           <Menu className="w-4 h-4 text-neutral-500" />
           <span className="text-sm font-medium text-neutral-500">Context</span>
         </div>
-        <div className="overflow-auto flex-1 [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none]">
-          <Code className="w-full text-md bg-neutral-100 dark:bg-neutral-900 whitespace-nowrap">
-            {contextMenuPath || "Not specified"}
-          </Code>
+        <div className="overflow-x-auto flex-1 [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none]">
+          <div className="min-w-full px-3 py-2 rounded-md bg-neutral-100 dark:bg-neutral-900 w-fit">
+            <code className="text-md whitespace-nowrap">
+              {contextMenuPath || "Not specified"}
+            </code>
+          </div>
         </div>
       </div>
       <div className="flex items-center min-w-0 gap-2">
@@ -55,10 +57,12 @@ const PathDisplay = ({ assetsPath, contextMenuPath }) => {
           <FolderOpen className="w-4 h-4 text-neutral-500" />
           <span className="text-sm font-medium text-neutral-500">Assets</span>
         </div>
-        <div className="overflow-auto flex-1 [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none]">
-          <Code className="w-full text-md bg-neutral-100 dark:bg-neutral-900 whitespace-nowrap">
-            {assetsPath || "Not specified"}
-          </Code>
+        <div className="overflow-x-auto flex-1 [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none]">
+          <div className="min-w-full px-3 py-2 rounded-md bg-neutral-100 dark:bg-neutral-900 w-fit">
+            <code className="text-md whitespace-nowrap">
+              {assetsPath || "Not specified"}
+            </code>
+          </div>
         </div>
       </div>
     </div>
