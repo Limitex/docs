@@ -6,9 +6,9 @@ import type { ComponentResult } from "./type";
 import Button from "./button";
 
 const createScrollView = (
-  name: string, 
-  children?: React.ReactNode, 
-  childDependency?: ComponentResult,
+  name: string,
+  children?: React.ReactNode,
+  childDependency?: ComponentResult
 ): ComponentResult => {
   const scrollView = ScrollView.Default({ name });
   return {
@@ -34,29 +34,40 @@ const createScrollView = (
   };
 };
 
-const SidebarDefault = (props: Partial<TreeItemProps> = {}): ComponentResult => {
+const SidebarDefault = (
+  props: Partial<TreeItemProps> = {}
+): ComponentResult => {
   const displayName = props.name ?? "Sidebar";
   const leftHeaderText = Text.H2({ name: "Text h2 (TMP)" });
   const rightHeaderText = Text.H3({ name: "Text h3 (TMP)" });
   const buttonText = Text.H5({ name: "Text h5 (TMP)" });
   const button = Button.Default({ name: "Button (Page 1)" });
   button.data.dependencies = [buttonText.data];
-  
-  const leftScrollView = createScrollView("Scroll View", button.content, button);
-  const rightScrollView = createScrollView("Scroll View (Page 1)", undefined, undefined);
+
+  const leftScrollView = createScrollView(
+    "Scroll View",
+    button.content,
+    button
+  );
+  const rightScrollView = createScrollView(
+    "Scroll View (Page 1)",
+    undefined,
+    undefined
+  );
 
   return {
     data: {
       title: "Sidebar",
       img: "https://via.placeholder.com/500x400",
       href: "/vrc/monoui/sidebar",
-      assetsPath: "/Packages/Mono UI/Runtime/Assets/Prefab/Layout/Sidebar.prefab",
+      assetsPath:
+        "/Packages/Mono UI/Runtime/Assets/Prefab/Layout/Sidebar.prefab",
       contextMenuPath: "GameObject/Mono UI/Sidebar",
       dependencies: [
         leftHeaderText.data,
         leftScrollView.data,
         rightHeaderText.data,
-        rightScrollView.data
+        rightScrollView.data,
       ],
     },
     content: (
@@ -79,8 +90,11 @@ const SidebarDefault = (props: Partial<TreeItemProps> = {}): ComponentResult => 
   };
 };
 
-const Sidebar: Record<string, (props?: Partial<TreeItemProps>) => ComponentResult> = {
+const Sidebar: Record<
+  string,
+  (props?: Partial<TreeItemProps>) => ComponentResult
+> = {
   Default: SidebarDefault,
 };
 
-export default Sidebar; 
+export default Sidebar;

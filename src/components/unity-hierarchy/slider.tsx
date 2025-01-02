@@ -10,7 +10,8 @@ const SliderDefault = (props: Partial<TreeItemProps> = {}): ComponentResult => {
       title: "Slider",
       img: "https://via.placeholder.com/500x400",
       href: "/vrc/monoui/slider",
-      assetsPath: "/Packages/Mono UI/Runtime/Assets/Prefab/Components/Slider.prefab",
+      assetsPath:
+        "/Packages/Mono UI/Runtime/Assets/Prefab/Components/Slider.prefab",
       contextMenuPath: "GameObject/Mono UI/Slider",
       dependencies: [],
     },
@@ -30,8 +31,11 @@ const SliderDefault = (props: Partial<TreeItemProps> = {}): ComponentResult => {
   };
 };
 
-const Slider: Record<string, (props?: Partial<TreeItemProps>) => ComponentResult> = {
+const Slider: Record<
+  string,
+  (props?: Partial<TreeItemProps>) => ComponentResult
+> = {
   Default: SliderDefault,
 };
 
-export default Slider; 
+export default Slider;

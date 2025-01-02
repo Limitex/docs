@@ -3,7 +3,9 @@ import Tree, { TreeItemProps } from "../tree";
 import Text from "./text";
 import type { ComponentResult } from "./type";
 
-const DropdownDefault = (props: Partial<TreeItemProps> = {}): ComponentResult => {
+const DropdownDefault = (
+  props: Partial<TreeItemProps> = {}
+): ComponentResult => {
   const TextH5 = Text.H5();
   const displayName = props.name ?? "Dropdown";
 
@@ -12,7 +14,8 @@ const DropdownDefault = (props: Partial<TreeItemProps> = {}): ComponentResult =>
       title: "Dropdown",
       img: "https://via.placeholder.com/500x400",
       href: "/vrc/monoui/dropdown",
-      assetsPath: "/Packages/Mono UI/Runtime/Assets/Prefab/Components/Dropdown.prefab",
+      assetsPath:
+        "/Packages/Mono UI/Runtime/Assets/Prefab/Components/Dropdown.prefab",
       contextMenuPath: "GameObject/Mono UI/Dropdown",
       dependencies: [TextH5.data],
     },
@@ -42,7 +45,10 @@ const DropdownDefault = (props: Partial<TreeItemProps> = {}): ComponentResult =>
   };
 };
 
-const Dropdown: Record<string, (props?: Partial<TreeItemProps>) => ComponentResult> = {
+const Dropdown: Record<
+  string,
+  (props?: Partial<TreeItemProps>) => ComponentResult
+> = {
   Default: DropdownDefault,
 };
 

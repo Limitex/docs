@@ -9,16 +9,13 @@ const CanvasDefault = (props: Partial<TreeItemProps> = {}): ComponentResult => {
       title: "Canvas",
       img: "https://via.placeholder.com/500x400",
       href: "/vrc/monoui/canvas",
-      assetsPath: "/Packages/Mono UI/Runtime/Assets/Prefab/Layout/Canvas.prefab",
+      assetsPath:
+        "/Packages/Mono UI/Runtime/Assets/Prefab/Layout/Canvas.prefab",
       contextMenuPath: "GameObject/Mono UI/Canvas",
       dependencies: [],
     },
     content: (
-      <Tree.Item 
-        name={props.name ?? "Canvas"}
-        type={Package}
-        {...props}
-      />
+      <Tree.Item name={props.name ?? "Canvas"} type={Package} {...props} />
     ),
   };
 };
@@ -29,19 +26,27 @@ const CanvasOutline = (props: Partial<TreeItemProps> = {}): ComponentResult => {
       title: "Canvas Outline",
       img: "https://via.placeholder.com/500x400",
       href: "/vrc/monoui/canvas",
-      assetsPath: "/Packages/Mono UI/Runtime/Assets/Prefab/Layout/Canvas Outline.prefab",
+      assetsPath:
+        "/Packages/Mono UI/Runtime/Assets/Prefab/Layout/Canvas Outline.prefab",
       contextMenuPath: "GameObject/Mono UI/Canvas Outline",
       dependencies: [],
     },
     content: (
-      <Tree.Item name={props.name ?? "Canvas Outline"} type={Package} {...props} />
+      <Tree.Item
+        name={props.name ?? "Canvas Outline"}
+        type={Package}
+        {...props}
+      />
     ),
   };
 };
 
-const Canvas: Record<string, (props?: Partial<TreeItemProps>) => ComponentResult> = {
+const Canvas: Record<
+  string,
+  (props?: Partial<TreeItemProps>) => ComponentResult
+> = {
   Default: CanvasDefault,
   Outline: CanvasOutline,
 };
 
-export default Canvas; 
+export default Canvas;

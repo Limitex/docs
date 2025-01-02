@@ -202,9 +202,9 @@ const Item = memo(
     );
 
     const fullPath = currentPath ? `${currentPath}/${name}` : name;
-    
+
     const isHighlighted = highlightPaths.includes(fullPath);
-    
+
     const finalVariant = isHighlighted ? "highlight" : variant;
 
     const finalItemClassName = `flex items-center px-2 py-1 rounded cursor-default
@@ -245,7 +245,7 @@ const Item = memo(
         >
           {!isLeaf && (
             <span
-              className="flex items-center justify-center"
+              className="flex justify-center items-center"
               aria-hidden="true"
               style={{ width: `${PADDING_STEP}px` }}
             >
@@ -258,7 +258,7 @@ const Item = memo(
           )}
           {IconComponent && (
             <div
-              className="flex items-center justify-center"
+              className="flex justify-center items-center"
               style={{ width: `${PADDING_STEP}px` }}
             >
               <IconComponent className="w-4 h-4" />
@@ -288,7 +288,7 @@ const Item = memo(
 
 const Container: React.FC<{ children: React.ReactNode }> = ({ children }) => {
   return (
-    <div className="w-full p-4 mt-8 border rounded-lg lg:px-5 dark:border-neutral-800">
+    <div className="p-4 mt-8 w-full rounded-lg border lg:px-5 dark:border-neutral-800">
       {children}
     </div>
   );

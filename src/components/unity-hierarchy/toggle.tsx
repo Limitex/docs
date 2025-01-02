@@ -40,7 +40,8 @@ const ToggleGroup = (props: Partial<TreeItemProps> = {}): ComponentResult => {
       title: "Toggle Group",
       img: "https://via.placeholder.com/500x400",
       href: "/vrc/monoui/toggle",
-      assetsPath: "/Packages/Mono UI/Runtime/Assets/Prefab/Components/Toggle/Toggle Group.prefab",
+      assetsPath:
+        "/Packages/Mono UI/Runtime/Assets/Prefab/Components/Toggle/Toggle Group.prefab",
       contextMenuPath: "GameObject/Mono UI/Toggle/Toggle Group",
       dependencies: [toggle1.data, toggle2.data, toggle3.data],
     },
@@ -63,7 +64,8 @@ const RadioToggle = (props: Partial<TreeItemProps> = {}): ComponentResult => {
       title: "Radio",
       img: "https://via.placeholder.com/500x400",
       href: "/vrc/monoui/radio",
-      assetsPath: "/Packages/Mono UI/Runtime/Assets/Prefab/Components/Radio.prefab",
+      assetsPath:
+        "/Packages/Mono UI/Runtime/Assets/Prefab/Components/Radio.prefab",
       contextMenuPath: "GameObject/Mono UI/Toggle/Radio Toggle",
       dependencies: [TextH5.data],
     },
@@ -78,7 +80,10 @@ const RadioToggle = (props: Partial<TreeItemProps> = {}): ComponentResult => {
   };
 };
 
-const Toggle: Record<string, (props?: Partial<TreeItemProps>) => ComponentResult> = {
+const Toggle: Record<
+  string,
+  (props?: Partial<TreeItemProps>) => ComponentResult
+> = {
   Default: ToggleDefault,
   Outline: (props) => ToggleDefault({ name: "Toggle Outline", ...props }),
   Group: ToggleGroup,

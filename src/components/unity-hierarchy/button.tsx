@@ -28,7 +28,10 @@ const ButtonDefault = (props: Partial<TreeItemProps> = {}): ComponentResult => {
   };
 };
 
-const Button: Record<string, (props?: Partial<TreeItemProps>) => ComponentResult> = {
+const Button: Record<
+  string,
+  (props?: Partial<TreeItemProps>) => ComponentResult
+> = {
   Default: ButtonDefault,
   Secondary: (props) => ButtonDefault({ name: "Secondary", ...props }),
   Destructive: (props) => ButtonDefault({ name: "Destructive", ...props }),

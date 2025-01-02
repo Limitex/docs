@@ -10,7 +10,8 @@ const SwitchDefault = (props: Partial<TreeItemProps> = {}): ComponentResult => {
       title: "Switch",
       img: "https://via.placeholder.com/500x400",
       href: "/vrc/monoui/switch",
-      assetsPath: "/Packages/Mono UI/Runtime/Assets/Prefab/Components/Switch.prefab",
+      assetsPath:
+        "/Packages/Mono UI/Runtime/Assets/Prefab/Components/Switch.prefab",
       contextMenuPath: "GameObject/Mono UI/Switch",
       dependencies: [],
     },
@@ -24,8 +25,11 @@ const SwitchDefault = (props: Partial<TreeItemProps> = {}): ComponentResult => {
   };
 };
 
-const Switch: Record<string, (props?: Partial<TreeItemProps>) => ComponentResult> = {
+const Switch: Record<
+  string,
+  (props?: Partial<TreeItemProps>) => ComponentResult
+> = {
   Default: SwitchDefault,
 };
 
-export default Switch; 
+export default Switch;

@@ -2,7 +2,9 @@ import { Box, Package } from "lucide-react";
 import Tree, { TreeItemProps } from "../tree";
 import type { ComponentResult } from "./type";
 
-const ScrollViewDefault = (props: Partial<TreeItemProps> = {}): ComponentResult => {
+const ScrollViewDefault = (
+  props: Partial<TreeItemProps> = {}
+): ComponentResult => {
   const displayName = props.name ?? "Scroll View";
 
   return {
@@ -10,7 +12,8 @@ const ScrollViewDefault = (props: Partial<TreeItemProps> = {}): ComponentResult 
       title: "Scroll View",
       img: "https://via.placeholder.com/500x400",
       href: "/vrc/monoui/scrollview",
-      assetsPath: "/Packages/Mono UI/Runtime/Assets/Prefab/Components/Scroll View.prefab",
+      assetsPath:
+        "/Packages/Mono UI/Runtime/Assets/Prefab/Components/Scroll View.prefab",
       contextMenuPath: "GameObject/Mono UI/Scroll View",
       dependencies: [],
     },
@@ -34,8 +37,11 @@ const ScrollViewDefault = (props: Partial<TreeItemProps> = {}): ComponentResult 
   };
 };
 
-const ScrollView: Record<string, (props?: Partial<TreeItemProps>) => ComponentResult> = {
+const ScrollView: Record<
+  string,
+  (props?: Partial<TreeItemProps>) => ComponentResult
+> = {
   Default: ScrollViewDefault,
 };
 
-export default ScrollView; 
+export default ScrollView;
