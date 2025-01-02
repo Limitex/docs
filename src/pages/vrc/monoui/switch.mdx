@@ -21,13 +21,22 @@ Not required.
   <Tree.Root defaultExpanded>
     <Tree.Item name="Canvas" type={Box}>
       {Switch.Default({ defaultExpanded: false }).content}
-      {Switch.Default({ defaultExpanded: false }).content}
+      {Switch.WithTextLeft({ defaultExpanded: false }).content}
+      {Switch.WithTextRight({ defaultExpanded: false }).content}
     </Tree.Item>
   </Tree.Root>
 </Tree.Container>
 
 ## Examples
 
-### Primary
+### Switch
 
 <ComponentsTabs component={Switch.Default()} />
+
+### Switch with Text (Left)
+
+<ComponentsTabs component={Switch.WithTextLeft()} />
+
+### Switch with Text (Right)
+
+<ComponentsTabs component={Switch.WithTextRight()} />
