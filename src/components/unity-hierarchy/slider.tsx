@@ -12,7 +12,7 @@ const SliderDefault = (props: Partial<TreeItemProps> = {}): ComponentResult => {
       href: "/vrc/monoui/slider",
       assetsPath:
         "/Packages/Mono UI/Runtime/Assets/Prefab/Components/Slider.prefab",
-      contextMenuPath: "GameObject/Mono UI/Slider",
+      contextMenuPath: "GameObject/Mono UI/Input Controls/Slider",
       dependencies: [],
     },
     content: (

@@ -14,7 +14,7 @@ const ScrollViewDefault = (
       href: "/vrc/monoui/scrollview",
       assetsPath:
         "/Packages/Mono UI/Runtime/Assets/Prefab/Components/Scroll View.prefab",
-      contextMenuPath: "GameObject/Mono UI/Scroll View",
+      contextMenuPath: "GameObject/Mono UI/Navigation/Scroll View",
       dependencies: [],
     },
     content: (

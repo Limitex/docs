@@ -14,7 +14,7 @@ const ProgressDefault = (
       href: "/vrc/monoui/progress",
       assetsPath:
         "/Packages/Mono UI/Runtime/Assets/Prefab/Components/Progress.prefab",
-      contextMenuPath: "GameObject/Mono UI/Progress",
+      contextMenuPath: "GameObject/Mono UI/Utility/Progress",
       dependencies: [],
     },
     content: (

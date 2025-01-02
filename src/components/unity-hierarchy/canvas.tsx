@@ -11,7 +11,7 @@ const CanvasDefault = (props: Partial<TreeItemProps> = {}): ComponentResult => {
       href: "/vrc/monoui/canvas",
       assetsPath:
         "/Packages/Mono UI/Runtime/Assets/Prefab/Layout/Canvas.prefab",
-      contextMenuPath: "GameObject/Mono UI/Canvas",
+      contextMenuPath: "GameObject/Mono UI/Layout/Canvas",
       dependencies: [],
     },
     content: (
@@ -28,7 +28,7 @@ const CanvasOutline = (props: Partial<TreeItemProps> = {}): ComponentResult => {
       href: "/vrc/monoui/canvas",
       assetsPath:
         "/Packages/Mono UI/Runtime/Assets/Prefab/Layout/Canvas Outline.prefab",
-      contextMenuPath: "GameObject/Mono UI/Canvas Outline",
+      contextMenuPath: "GameObject/Mono UI/Layout/Canvas Outline",
       dependencies: [],
     },
     content: (

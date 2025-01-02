@@ -62,7 +62,7 @@ const SidebarDefault = (
       href: "/vrc/monoui/sidebar",
       assetsPath:
         "/Packages/Mono UI/Runtime/Assets/Prefab/Layout/Sidebar.prefab",
-      contextMenuPath: "GameObject/Mono UI/Sidebar",
+      contextMenuPath: "GameObject/Mono UI/Layout/Sidebar",
       dependencies: [
         leftHeaderText.data,
         leftScrollView.data,

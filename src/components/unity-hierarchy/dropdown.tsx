@@ -16,7 +16,7 @@ const DropdownDefault = (
       href: "/vrc/monoui/dropdown",
       assetsPath:
         "/Packages/Mono UI/Runtime/Assets/Prefab/Components/Dropdown.prefab",
-      contextMenuPath: "GameObject/Mono UI/Dropdown",
+      contextMenuPath: "GameObject/Mono UI/Input Controls/Dropdown",
       dependencies: [TextH5.data],
     },
     content: (

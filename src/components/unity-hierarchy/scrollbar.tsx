@@ -14,7 +14,7 @@ const ScrollbarDefault = (
       href: "/vrc/monoui/scrollbar",
       assetsPath:
         "/Packages/Mono UI/Runtime/Assets/Prefab/Components/Scrollbar.prefab",
-      contextMenuPath: "GameObject/Mono UI/Scrollbar",
+      contextMenuPath: "GameObject/Mono UI/Navigation/Scrollbar",
       dependencies: [],
     },
     content: (

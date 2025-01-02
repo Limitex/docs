@@ -12,7 +12,7 @@ const SpanDefault = (props: Partial<TreeItemProps> = {}): ComponentResult => {
       href: "/vrc/monoui/span",
       assetsPath:
         "/Packages/Mono UI/Runtime/Assets/Prefab/Components/Span.prefab",
-      contextMenuPath: "GameObject/Mono UI/Span",
+      contextMenuPath: "GameObject/Mono UI/Utility/Span",
       dependencies: [],
     },
     content: <Tree.Item name={displayName} type={Package} {...props} />,

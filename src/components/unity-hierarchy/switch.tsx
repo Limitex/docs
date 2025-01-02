@@ -11,8 +11,8 @@ const SwitchDefault = (props: Partial<TreeItemProps> = {}): ComponentResult => {
       img: "https://via.placeholder.com/500x400",
       href: "/vrc/monoui/switch",
       assetsPath:
-        "/Packages/Mono UI/Runtime/Assets/Prefab/Components/Switch.prefab",
-      contextMenuPath: "GameObject/Mono UI/Switch",
+        "/Packages/Mono UI/Runtime/Assets/Prefab/Components/Switch/Switch.prefab",
+      contextMenuPath: "GameObject/Mono UI/Switch/Switch",
       dependencies: [],
     },
     content: (

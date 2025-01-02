@@ -17,7 +17,7 @@ const InputFieldDefault = (
       href: "/vrc/monoui/inputfield",
       assetsPath:
         "/Packages/Mono UI/Runtime/Assets/Prefab/Components/InputField.prefab",
-      contextMenuPath: "GameObject/Mono UI/InputField",
+      contextMenuPath: "GameObject/Mono UI/Input Controls/Input Field",
       dependencies: [InputText.data],
     },
     content: (
