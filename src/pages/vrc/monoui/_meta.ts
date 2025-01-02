@@ -35,6 +35,7 @@ export default {
   span: "Span",
   switch: "Switch",
   separator: "Separator",
+  lucideicon: "Lucide Icon",
   "--- Components 2": {
     type: "separator",
     title: "Components 2",
