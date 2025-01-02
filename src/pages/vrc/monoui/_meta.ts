@@ -34,6 +34,7 @@ export default {
   slider: "Slider",
   span: "Span",
   switch: "Switch",
+  separator: "Separator",
   "--- Components 2": {
     type: "separator",
     title: "Components 2",
