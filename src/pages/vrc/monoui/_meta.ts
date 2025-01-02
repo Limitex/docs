@@ -12,6 +12,7 @@ export default {
   uisample: "UI Sample",
   quizmenu: "Quiz Menu",
   worldlog: "World Log",
+  lucideiconsample: "Lucide Icon Sample",
   "--- Layout": {
     type: "separator",
     title: "Layout",
