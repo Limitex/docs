@@ -47,6 +47,7 @@ export default {
     type: "separator",
     title: "More",
   },
+  credit: "Credit",
   github_link: {
     title: "Mono UI",
     href: "https://github.com/Limitex/mono-ui",
