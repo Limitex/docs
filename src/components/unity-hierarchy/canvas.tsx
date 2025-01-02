@@ -1,4 +1,4 @@
-import { Package } from "lucide-react";
+import { Package, Box } from "lucide-react";
 import Tree from "../tree";
 import type { ComponentResult } from "./type";
 import type { TreeItemProps } from "../tree";
@@ -36,7 +36,9 @@ const CanvasOutline = (props: Partial<TreeItemProps> = {}): ComponentResult => {
         name={props.name ?? "Canvas Outline"}
         type={Package}
         {...props}
-      />
+      >
+        <Tree.Item name="Outline" type={Box} />
+      </Tree.Item>
     ),
   };
 };
