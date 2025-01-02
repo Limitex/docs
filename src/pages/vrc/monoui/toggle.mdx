@@ -22,24 +22,31 @@ Not required.
     <Tree.Item name="Canvas" type={Box}>
       {Toggle.Default({ defaultExpanded: false }).content}
       {Toggle.Outline({ defaultExpanded: false }).content}
+      {Toggle.Group({ defaultExpanded: false }).content}
+      {Toggle.Radio({ defaultExpanded: false }).content}
+      {Toggle.RadioGroup({ defaultExpanded: false }).content}
     </Tree.Item>
   </Tree.Root>
 </Tree.Container>
 
 ## Examples
 
-### Primary
+### Toggle
 
 <ComponentsTabs component={Toggle.Default()} />
 
-### Outline
+### Toggle Outline
 
 <ComponentsTabs component={Toggle.Outline()} />
 
-### Group
+### Toggle Group
 
 <ComponentsTabs component={Toggle.Group()} />
 
-### Radio
+### Radio Toggle
 
 <ComponentsTabs component={Toggle.Radio()} />
+
+### Radio Toggle Group
+
+<ComponentsTabs component={Toggle.RadioGroup()} />

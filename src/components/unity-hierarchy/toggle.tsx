@@ -29,6 +29,33 @@ const ToggleDefault = (props: Partial<TreeItemProps> = {}): ComponentResult => {
   };
 };
 
+const ToggleOutline = (props: Partial<TreeItemProps> = {}): ComponentResult => {
+  const TextH5 = Text.H5();
+  const displayName = props.name ?? "Toggle Outline";
+  const assetsPath = `/Packages/Mono UI/Runtime/Assets/Prefab/Components/Toggle/${displayName}.prefab`;
+  const contextMenuPath = "GameObject/Mono UI/Toggle/" + displayName;
+
+  return {
+    data: {
+      title: "Toggle Outline",
+      img: "https://via.placeholder.com/500x400",
+      href: "/vrc/monoui/toggle",
+      assetsPath: assetsPath,
+      contextMenuPath: contextMenuPath,
+      dependencies: [TextH5.data],
+    },
+    content: (
+      <Tree.Item name={displayName} type={Package} {...props}>
+        <Tree.Item name="Outline" type={Box} />
+        <Tree.Item name="Background" type={Box}>
+          <Tree.Item name="Checkmark" type={Box} />
+        </Tree.Item>
+        {TextH5.content}
+      </Tree.Item>
+    ),
+  };
+};
+
 const ToggleGroup = (props: Partial<TreeItemProps> = {}): ComponentResult => {
   const displayName = props.name ?? "Toggle Group";
   const toggle1 = ToggleDefault({ name: "Toggle (0)" });
@@ -55,26 +82,29 @@ const ToggleGroup = (props: Partial<TreeItemProps> = {}): ComponentResult => {
   };
 };
 
-const RadioToggle = (props: Partial<TreeItemProps> = {}): ComponentResult => {
-  const TextH5 = Text.H5();
-  const displayName = props.name ?? "Radio";
+const RadioToggleGroup = (
+  props: Partial<TreeItemProps> = {}
+): ComponentResult => {
+  const displayName = props.name ?? "Toggle Group";
+  const toggle1 = ToggleDefault({ name: "Radio Toggle" });
+  const toggle2 = ToggleDefault({ name: "Radio Toggle (1)" });
+  const toggle3 = ToggleDefault({ name: "Radio Toggle (2)" });
 
   return {
     data: {
-      title: "Radio",
+      title: "Toggle Group",
       img: "https://via.placeholder.com/500x400",
-      href: "/vrc/monoui/radio",
+      href: "/vrc/monoui/toggle",
       assetsPath:
-        "/Packages/Mono UI/Runtime/Assets/Prefab/Components/Radio.prefab",
-      contextMenuPath: "GameObject/Mono UI/Toggle/Radio Toggle",
-      dependencies: [TextH5.data],
+        "/Packages/Mono UI/Runtime/Assets/Prefab/Components/Toggle/Radio Toggle Group.prefab",
+      contextMenuPath: "GameObject/Mono UI/Toggle/Radio Toggle Group",
+      dependencies: [toggle1.data, toggle2.data, toggle3.data],
     },
     content: (
       <Tree.Item name={displayName} type={Package} {...props}>
-        <Tree.Item name="Background" type={Box}>
-          <Tree.Item name="Checkmark" type={Box} />
-        </Tree.Item>
-        {TextH5.content}
+        {toggle1.content}
+        {toggle2.content}
+        {toggle3.content}
       </Tree.Item>
     ),
   };
@@ -85,9 +115,10 @@ const Toggle: Record<
   (props?: Partial<TreeItemProps>) => ComponentResult
 > = {
   Default: ToggleDefault,
-  Outline: (props) => ToggleDefault({ name: "Toggle Outline", ...props }),
+  Outline: ToggleOutline,
   Group: ToggleGroup,
-  Radio: RadioToggle,
+  Radio: (props) => ToggleDefault({ name: "Radio Toggle", ...props }),
+  RadioGroup: RadioToggleGroup,
 };
 
 export default Toggle;
