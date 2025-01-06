@@ -12,6 +12,7 @@ export default {
   uisample: "UI Sample",
   quizmenu: "Quiz Menu",
   worldlog: "World Log",
+  platformstatistics: "Platform Statistics",
   lucideiconsample: "Lucide Icon Sample",
   "--- Layout": {
     type: "separator",
@@ -42,6 +43,7 @@ export default {
   },
   scrollview: "Scroll View",
   scrollbar: "Scrollbar",
+  carousel: "Carousel",
   "--- Utility": {
     type: "separator",
     title: "Utility",
@@ -49,6 +51,13 @@ export default {
   progress: "Progress",
   span: "Span",
   separator: "Separator",
+  table: "Table",
+  "--- Loading": {
+    type: "separator",
+    title: "Loading",
+  },
+  loadingbar: "Loading Bar",
+  loadingcircle: "Loading Circle",
   "--- Providers": {
     type: "separator",
     title: "Providers",

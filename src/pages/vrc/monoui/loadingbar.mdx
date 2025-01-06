@@ -1,0 +1,32 @@
+import Image from "next/image";
+import { Tabs, Cards } from "nextra/components";
+import { Box, Package } from "lucide-react";
+import Tree from "../../../components/tree.tsx";
+import ComponentsTabs from "../../../components/components-tabs.tsx";
+import Loading from "../../../components/unity-hierarchy/loading.tsx";
+
+# Loading Bar
+
+A component that displays a horizontal loading animation.
+
+<ComponentsTabs component={Loading.Bar()} />
+
+## Installation
+
+Not required.
+
+## Usage
+
+<Tree.Container>
+  <Tree.Root defaultExpanded>
+    <Tree.Item name="Canvas" type={Box}>
+      {Loading.Bar({ defaultExpanded: false }).content}
+    </Tree.Item>
+  </Tree.Root>
+</Tree.Container>
+
+## Examples
+
+### Primary
+
+<ComponentsTabs component={Loading.Bar()} /> 

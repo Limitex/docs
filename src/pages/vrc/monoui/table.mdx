@@ -1,0 +1,32 @@
+import Image from "next/image";
+import { Tabs, Cards } from "nextra/components";
+import { Box, Package } from "lucide-react";
+import Tree from "../../../components/tree.tsx";
+import ComponentsTabs from "../../../components/components-tabs.tsx";
+import Table from "../../../components/unity-hierarchy/table.tsx";
+
+# Table
+
+A component for displaying data in a structured table format.
+
+<ComponentsTabs component={Table.Default()} />
+
+## Installation
+
+Not required.
+
+## Usage
+
+<Tree.Container>
+  <Tree.Root defaultExpanded>
+    <Tree.Item name="Canvas" type={Box}>
+      {Table.Default({ defaultExpanded: false }).content}
+    </Tree.Item>
+  </Tree.Root>
+</Tree.Container>
+
+## Examples
+
+### Primary
+
+<ComponentsTabs component={Table.Default()} /> 
