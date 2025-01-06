@@ -19,18 +19,17 @@ const TextDefault = (props: Partial<TreeItemProps> = {}): ComponentResult => {
       dependencies: [],
     },
     content: (
-      <Tree.Item 
-        name={displayName}
-        type={Package}
-        {...restProps}
-      >
+      <Tree.Item name={displayName} type={Package} {...restProps}>
         <Tree.Item name="Underline" type={Box} />
       </Tree.Item>
     ),
   };
 };
 
-const Text: Record<string, (props?: Partial<TreeItemProps>) => ComponentResult> = {
+const Text: Record<
+  string,
+  (props?: Partial<TreeItemProps>) => ComponentResult
+> = {
   Default: TextDefault,
   H1: (props) => TextDefault({ name: "Text h1 (TMP)", ...props }),
   H2: (props) => TextDefault({ name: "Text h2 (TMP)", ...props }),

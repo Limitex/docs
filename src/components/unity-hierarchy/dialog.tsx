@@ -16,9 +16,15 @@ const DialogDefault = (props: Partial<TreeItemProps> = {}): ComponentResult => {
       title: "Dialog",
       img: "https://via.placeholder.com/500x400",
       href: "/vrc/monoui/dialog",
-      assetsPath: "/Packages/Mono UI/Runtime/Assets/Prefab/Components 2/Dialog.prefab",
+      assetsPath:
+        "/Packages/Mono UI/Runtime/Assets/Prefab/Providers/Dialog Provider.prefab",
       contextMenuPath: "GameObject/Mono UI/Provider/Dialog",
-      dependencies: [Title.data, Description.data, CancelButton.data, ContinueButton.data],
+      dependencies: [
+        Title.data,
+        Description.data,
+        CancelButton.data,
+        ContinueButton.data,
+      ],
     },
     content: (
       <Tree.Item name={displayName} type={Package} {...props}>
@@ -41,8 +47,11 @@ const DialogDefault = (props: Partial<TreeItemProps> = {}): ComponentResult => {
   };
 };
 
-const Dialog: Record<string, (props?: Partial<TreeItemProps>) => ComponentResult> = {
+const Dialog: Record<
+  string,
+  (props?: Partial<TreeItemProps>) => ComponentResult
+> = {
   Default: DialogDefault,
 };
 
-export default Dialog; 
+export default Dialog;

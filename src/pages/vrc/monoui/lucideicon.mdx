@@ -1,0 +1,31 @@
+import { Steps, Tabs, Cards, Callout } from "nextra/components";
+import { Box, Package } from "lucide-react";
+import Tree from "../../../components/tree.tsx";
+import ComponentsTabs from "../../../components/components-tabs.tsx";
+import LucideIcon from "../../../components/unity-hierarchy/lucideicon.tsx";
+
+# Lucide Icon
+
+A component for displaying Lucide icons in your UI.
+
+<ComponentsTabs component={LucideIcon.Default()} />
+
+## Installation
+
+Not required.
+
+## Usage
+
+<Tree.Container>
+  <Tree.Root defaultExpanded>
+    <Tree.Item name="Canvas" type={Box}>
+      {LucideIcon.Default({ defaultExpanded: false }).content}
+    </Tree.Item>
+  </Tree.Root>
+</Tree.Container>
+
+## Examples
+
+### Primary
+
+<ComponentsTabs component={LucideIcon.Default()} />

@@ -10,7 +10,8 @@ const CardDefault = (props: Partial<TreeItemProps> = {}): ComponentResult => {
       title: "Card",
       img: "https://via.placeholder.com/500x400",
       href: "/vrc/monoui/card",
-      assetsPath: "/Packages/Mono UI/Runtime/Assets/Prefab/Components/Card.prefab",
+      assetsPath:
+        "/Packages/Mono UI/Runtime/Assets/Prefab/Components/Card.prefab",
       contextMenuPath: "GameObject/Mono UI/Card/Card",
       dependencies: [],
     },
@@ -31,7 +32,8 @@ const CardOutline = (props: Partial<TreeItemProps> = {}): ComponentResult => {
       title: "Card Outline",
       img: "https://via.placeholder.com/500x400",
       href: "/vrc/monoui/card",
-      assetsPath: "/Packages/Mono UI/Runtime/Assets/Prefab/Components/Card Outline.prefab",
+      assetsPath:
+        "/Packages/Mono UI/Runtime/Assets/Prefab/Components/Card Outline.prefab",
       contextMenuPath: "GameObject/Mono UI/Card/Card Outline",
       dependencies: [],
     },
@@ -44,9 +46,12 @@ const CardOutline = (props: Partial<TreeItemProps> = {}): ComponentResult => {
   };
 };
 
-const Card: Record<string, (props?: Partial<TreeItemProps>) => ComponentResult> = {
+const Card: Record<
+  string,
+  (props?: Partial<TreeItemProps>) => ComponentResult
+> = {
   Default: CardDefault,
   Outline: CardOutline,
 };
 
-export default Card; 
+export default Card;

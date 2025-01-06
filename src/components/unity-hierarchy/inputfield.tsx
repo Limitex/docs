@@ -3,7 +3,9 @@ import Tree, { TreeItemProps } from "../tree";
 import Text from "./text";
 import type { ComponentResult } from "./type";
 
-const InputFieldDefault = (props: Partial<TreeItemProps> = {}): ComponentResult => {
+const InputFieldDefault = (
+  props: Partial<TreeItemProps> = {}
+): ComponentResult => {
   const InputText = Text.H5();
   const PlaceholderText = Text.H5({ name: "Placeholder - Text h5 (TMP)" });
   const displayName = props.name ?? "InputField";
@@ -13,8 +15,9 @@ const InputFieldDefault = (props: Partial<TreeItemProps> = {}): ComponentResult 
       title: "InputField",
       img: "https://via.placeholder.com/500x400",
       href: "/vrc/monoui/inputfield",
-      assetsPath: "/Packages/Mono UI/Runtime/Assets/Prefab/Components/InputField.prefab",
-      contextMenuPath: "GameObject/Mono UI/InputField",
+      assetsPath:
+        "/Packages/Mono UI/Runtime/Assets/Prefab/Components/InputField.prefab",
+      contextMenuPath: "GameObject/Mono UI/Input Controls/Input Field",
       dependencies: [InputText.data],
     },
     content: (
@@ -29,7 +32,10 @@ const InputFieldDefault = (props: Partial<TreeItemProps> = {}): ComponentResult 
   };
 };
 
-const InputField: Record<string, (props?: Partial<TreeItemProps>) => ComponentResult> = {
+const InputField: Record<
+  string,
+  (props?: Partial<TreeItemProps>) => ComponentResult
+> = {
   Default: InputFieldDefault,
 };
 

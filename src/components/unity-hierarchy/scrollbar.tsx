@@ -2,7 +2,9 @@ import { Box, Package } from "lucide-react";
 import Tree, { TreeItemProps } from "../tree";
 import type { ComponentResult } from "./type";
 
-const ScrollbarDefault = (props: Partial<TreeItemProps> = {}): ComponentResult => {
+const ScrollbarDefault = (
+  props: Partial<TreeItemProps> = {}
+): ComponentResult => {
   const displayName = props.name ?? "Scrollbar";
 
   return {
@@ -10,8 +12,9 @@ const ScrollbarDefault = (props: Partial<TreeItemProps> = {}): ComponentResult =
       title: "Scrollbar",
       img: "https://via.placeholder.com/500x400",
       href: "/vrc/monoui/scrollbar",
-      assetsPath: "/Packages/Mono UI/Runtime/Assets/Prefab/Components/Scrollbar.prefab",
-      contextMenuPath: "GameObject/Mono UI/Scrollbar",
+      assetsPath:
+        "/Packages/Mono UI/Runtime/Assets/Prefab/Components/Scrollbar.prefab",
+      contextMenuPath: "GameObject/Mono UI/Navigation/Scrollbar",
       dependencies: [],
     },
     content: (
@@ -24,8 +27,11 @@ const ScrollbarDefault = (props: Partial<TreeItemProps> = {}): ComponentResult =
   };
 };
 
-const Scrollbar: Record<string, (props?: Partial<TreeItemProps>) => ComponentResult> = {
+const Scrollbar: Record<
+  string,
+  (props?: Partial<TreeItemProps>) => ComponentResult
+> = {
   Default: ScrollbarDefault,
 };
 
-export default Scrollbar; 
+export default Scrollbar;

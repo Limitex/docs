@@ -2,7 +2,9 @@ import { Box, Package } from "lucide-react";
 import Tree, { TreeItemProps } from "../tree";
 import type { ComponentResult } from "./type";
 
-const ProgressDefault = (props: Partial<TreeItemProps> = {}): ComponentResult => {
+const ProgressDefault = (
+  props: Partial<TreeItemProps> = {}
+): ComponentResult => {
   const displayName = props.name ?? "Progress";
 
   return {
@@ -10,8 +12,9 @@ const ProgressDefault = (props: Partial<TreeItemProps> = {}): ComponentResult =>
       title: "Progress",
       img: "https://via.placeholder.com/500x400",
       href: "/vrc/monoui/progress",
-      assetsPath: "/Packages/Mono UI/Runtime/Assets/Prefab/Components/Progress.prefab",
-      contextMenuPath: "GameObject/Mono UI/Progress",
+      assetsPath:
+        "/Packages/Mono UI/Runtime/Assets/Prefab/Components/Progress.prefab",
+      contextMenuPath: "GameObject/Mono UI/Utility/Progress",
       dependencies: [],
     },
     content: (
@@ -24,7 +27,10 @@ const ProgressDefault = (props: Partial<TreeItemProps> = {}): ComponentResult =>
   };
 };
 
-const Progress: Record<string, (props?: Partial<TreeItemProps>) => ComponentResult> = {
+const Progress: Record<
+  string,
+  (props?: Partial<TreeItemProps>) => ComponentResult
+> = {
   Default: ProgressDefault,
 };
 

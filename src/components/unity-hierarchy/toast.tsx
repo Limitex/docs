@@ -15,7 +15,8 @@ const ToastDefault = (props: Partial<TreeItemProps> = {}): ComponentResult => {
       title: "Toast",
       img: "https://via.placeholder.com/500x400",
       href: "/vrc/monoui/toast",
-      assetsPath: "/Packages/Mono UI/Runtime/Assets/Prefab/Components 2/Toast.prefab",
+      assetsPath:
+        "/Packages/Mono UI/Runtime/Assets/Prefab/Providers/Toast Provider.prefab",
       contextMenuPath: "GameObject/Mono UI/Provider/Toast",
       dependencies: [TextH5.data, TextH6.data, ButtonOutline.data],
     },
@@ -40,8 +41,11 @@ const ToastDefault = (props: Partial<TreeItemProps> = {}): ComponentResult => {
   };
 };
 
-const Toast: Record<string, (props?: Partial<TreeItemProps>) => ComponentResult> = {
+const Toast: Record<
+  string,
+  (props?: Partial<TreeItemProps>) => ComponentResult
+> = {
   Default: ToastDefault,
 };
 
-export default Toast; 
+export default Toast;
