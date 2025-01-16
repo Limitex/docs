@@ -13,7 +13,6 @@ export default {
   quizmenu: "Quiz Menu",
   worldlog: "World Log",
   platformstatistics: "Platform Statistics",
-  lucideiconsample: "Lucide Icon Sample",
   "--- Layout": {
     type: "separator",
     title: "Layout",
