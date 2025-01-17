@@ -8,7 +8,7 @@ const CardDefault = (props: Partial<TreeItemProps> = {}): ComponentResult => {
   return {
     data: {
       title: "Card",
-      img: "https://via.placeholder.com/500x400",
+      img: "/components/Card.webp",
       href: "/vrc/monoui/card",
       assetsPath:
         "/Packages/Mono UI/Runtime/Assets/Prefab/Components/Card.prefab",
@@ -30,7 +30,7 @@ const CardOutline = (props: Partial<TreeItemProps> = {}): ComponentResult => {
   return {
     data: {
       title: "Card Outline",
-      img: "https://via.placeholder.com/500x400",
+      img: "/components/Card Outline.webp",
       href: "/vrc/monoui/card",
       assetsPath:
         "/Packages/Mono UI/Runtime/Assets/Prefab/Components/Card Outline.prefab",

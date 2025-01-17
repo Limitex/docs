@@ -8,7 +8,7 @@ const SpanDefault = (props: Partial<TreeItemProps> = {}): ComponentResult => {
   return {
     data: {
       title: "Span",
-      img: "https://via.placeholder.com/500x400",
+      img: "/components/Span.webp",
       href: "/vrc/monoui/span",
       assetsPath:
         "/Packages/Mono UI/Runtime/Assets/Prefab/Components/Span.prefab",

@@ -12,7 +12,7 @@ const DropdownDefault = (
   return {
     data: {
       title: "Dropdown",
-      img: "https://via.placeholder.com/500x400",
+      img: "/components/Dropdown.webp",
       href: "/vrc/monoui/dropdown",
       assetsPath:
         "/Packages/Mono UI/Runtime/Assets/Prefab/Components/Dropdown.prefab",

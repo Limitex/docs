@@ -93,7 +93,7 @@ const SidebarDefault = (
   return {
     data: {
       title: "Sidebar",
-      img: "https://via.placeholder.com/500x400",
+      img: "/components/Sidebar.webp",
       href: "/vrc/monoui/sidebar",
       assetsPath:
         "/Packages/Mono UI/Runtime/Assets/Prefab/Layout/Sidebar.prefab",

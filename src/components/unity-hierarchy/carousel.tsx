@@ -35,7 +35,7 @@ const CarouselDefault = (props: Partial<TreeItemProps> = {}): ComponentResult =>
   return {
     data: {
       title: "Carousel",
-      img: "https://via.placeholder.com/500x400",
+      img: "/components/Carousel.webp",
       href: "/vrc/monoui/carousel",
       assetsPath:
         "/Packages/Mono UI/Runtime/Assets/Prefab/Components/Carousel.prefab",

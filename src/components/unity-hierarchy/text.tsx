@@ -12,7 +12,7 @@ const TextDefault = (props: Partial<TreeItemProps> = {}): ComponentResult => {
   return {
     data: {
       title: "Text (TMP)",
-      img: "https://via.placeholder.com/500x400",
+      img: name ? `/components/${name}.webp` : "/components/Text (TMP).webp",
       href: "/vrc/monoui/text",
       assetsPath: assetsPath,
       contextMenuPath: contextMenuPath,

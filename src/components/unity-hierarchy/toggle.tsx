@@ -12,7 +12,9 @@ const ToggleDefault = (props: Partial<TreeItemProps> = {}): ComponentResult => {
   return {
     data: {
       title: "Toggle",
-      img: "https://via.placeholder.com/500x400",
+      img: props.name === "Radio Toggle" 
+        ? "/components/Radio Toggle.webp"
+        : "/components/Toggle.webp",
       href: "/vrc/monoui/toggle",
       assetsPath: assetsPath,
       contextMenuPath: contextMenuPath,
@@ -38,7 +40,7 @@ const ToggleOutline = (props: Partial<TreeItemProps> = {}): ComponentResult => {
   return {
     data: {
       title: "Toggle Outline",
-      img: "https://via.placeholder.com/500x400",
+      img: "/components/Toggle Outline.webp",
       href: "/vrc/monoui/toggle",
       assetsPath: assetsPath,
       contextMenuPath: contextMenuPath,
@@ -65,7 +67,7 @@ const ToggleGroup = (props: Partial<TreeItemProps> = {}): ComponentResult => {
   return {
     data: {
       title: "Toggle Group",
-      img: "https://via.placeholder.com/500x400",
+      img: "/components/Toggle Group.webp",
       href: "/vrc/monoui/toggle",
       assetsPath:
         "/Packages/Mono UI/Runtime/Assets/Prefab/Components/Toggle/Toggle Group.prefab",
@@ -93,7 +95,7 @@ const RadioToggleGroup = (
   return {
     data: {
       title: "Toggle Group",
-      img: "https://via.placeholder.com/500x400",
+      img: "/components/Radio Toggle Group.webp",
       href: "/vrc/monoui/toggle",
       assetsPath:
         "/Packages/Mono UI/Runtime/Assets/Prefab/Components/Toggle/Radio Toggle Group.prefab",

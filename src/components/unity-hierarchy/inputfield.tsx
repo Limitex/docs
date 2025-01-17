@@ -13,7 +13,7 @@ const InputFieldDefault = (
   return {
     data: {
       title: "InputField",
-      img: "https://via.placeholder.com/500x400",
+      img: "/components/InputField.webp",
       href: "/vrc/monoui/inputfield",
       assetsPath:
         "/Packages/Mono UI/Runtime/Assets/Prefab/Components/InputField.prefab",

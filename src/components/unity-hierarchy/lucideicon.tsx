@@ -10,7 +10,7 @@ const LucideIconDefault = (
   return {
     data: {
       title: "Lucide Icon",
-      img: "https://via.placeholder.com/500x400",
+      img: "/components/Lucide Icon.webp",
       href: "/vrc/monoui/lucideicon",
       assetsPath:
         "/Packages/Mono UI/Runtime/Assets/Prefab/Components/Lucide Icon.prefab",

@@ -10,7 +10,7 @@ const ScrollViewDefault = (
   return {
     data: {
       title: "Scroll View",
-      img: "https://via.placeholder.com/500x400",
+      img: "/components/Scroll View.webp",
       href: "/vrc/monoui/scrollview",
       assetsPath:
         "/Packages/Mono UI/Runtime/Assets/Prefab/Components/Scroll View.prefab",
