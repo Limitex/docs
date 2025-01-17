@@ -8,7 +8,7 @@ const LoadingBarDefault = (props: Partial<TreeItemProps> = {}): ComponentResult 
   return {
     data: {
       title: "Loading Bar",
-      img: "https://via.placeholder.com/500x400",
+      img: "/components/Loading Bar.webp",
       href: "/vrc/monoui/loadingbar",
       assetsPath:
         "/Packages/Mono UI/Runtime/Assets/Prefab/Components/Loading/Loading Bar.prefab",
@@ -29,7 +29,7 @@ const LoadingCircleDefault = (props: Partial<TreeItemProps> = {}): ComponentResu
   return {
     data: {
       title: "Loading Circle",
-      img: "https://via.placeholder.com/500x400",
+      img: "/components/Loading Circle.webp",
       href: "/vrc/monoui/loadingcircle",
       assetsPath:
         "/Packages/Mono UI/Runtime/Assets/Prefab/Components/Loading/Loading Circle.prefab",

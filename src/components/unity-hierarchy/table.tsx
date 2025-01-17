@@ -8,7 +8,7 @@ const TableDefault = (props: Partial<TreeItemProps> = {}): ComponentResult => {
   return {
     data: {
       title: "Table",
-      img: "https://via.placeholder.com/500x400",
+      img: "/components/Table.webp",
       href: "/vrc/monoui/table",
       assetsPath:
         "/Packages/Mono UI/Runtime/Assets/Prefab/Components/Table.prefab",

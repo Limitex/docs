@@ -10,7 +10,7 @@ const SeparatorDefault = (
   return {
     data: {
       title: "Separator",
-      img: "https://via.placeholder.com/500x400",
+      img: "/components/Separator.webp",
       href: "/vrc/monoui/separator",
       assetsPath:
         "/Packages/Mono UI/Runtime/Assets/Prefab/Components/Separator.prefab",

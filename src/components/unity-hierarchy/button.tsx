@@ -14,7 +14,7 @@ const ButtonDefault = (props: Partial<TreeItemProps> = {}): ComponentResult => {
   return {
     data: {
       title: "Button",
-      img: "https://via.placeholder.com/500x400",
+      img: name ? `/components/Button ${name}.webp` : "/components/Button.webp",
       href: "/vrc/monoui/button",
       assetsPath: assetsPath,
       contextMenuPath: contextMenuPath,

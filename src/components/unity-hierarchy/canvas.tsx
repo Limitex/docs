@@ -7,7 +7,7 @@ const CanvasDefault = (props: Partial<TreeItemProps> = {}): ComponentResult => {
   return {
     data: {
       title: "Canvas",
-      img: "https://via.placeholder.com/500x400",
+      img: "/components/Canvas.webp",
       href: "/vrc/monoui/canvas",
       assetsPath:
         "/Packages/Mono UI/Runtime/Assets/Prefab/Layout/Canvas.prefab",
@@ -24,7 +24,7 @@ const CanvasOutline = (props: Partial<TreeItemProps> = {}): ComponentResult => {
   return {
     data: {
       title: "Canvas Outline",
-      img: "https://via.placeholder.com/500x400",
+      img: "/components/Canvas Outline.webp",
       href: "/vrc/monoui/canvas",
       assetsPath:
         "/Packages/Mono UI/Runtime/Assets/Prefab/Layout/Canvas Outline.prefab",

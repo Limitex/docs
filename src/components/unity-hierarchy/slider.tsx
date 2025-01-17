@@ -8,7 +8,7 @@ const SliderDefault = (props: Partial<TreeItemProps> = {}): ComponentResult => {
   return {
     data: {
       title: "Slider",
-      img: "https://via.placeholder.com/500x400",
+      img: "/components/Slider.webp",
       href: "/vrc/monoui/slider",
       assetsPath:
         "/Packages/Mono UI/Runtime/Assets/Prefab/Components/Slider.prefab",

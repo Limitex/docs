@@ -9,7 +9,7 @@ const SwitchDefault = (props: Partial<TreeItemProps> = {}): ComponentResult => {
   return {
     data: {
       title: "Switch",
-      img: "https://via.placeholder.com/500x400",
+      img: "/components/Switch.webp",
       href: "/vrc/monoui/switch",
       assetsPath:
         "/Packages/Mono UI/Runtime/Assets/Prefab/Components/Switch/Switch.prefab",
@@ -35,7 +35,7 @@ const SwitchWithTextLeft = (
   return {
     data: {
       title: "Switch with Text (Left)",
-      img: "https://via.placeholder.com/500x400",
+      img: "/components/Switch with Text (Left).webp",
       href: "/vrc/monoui/switch",
       assetsPath:
         "/Packages/Mono UI/Runtime/Assets/Prefab/Components/Switch/Switch with Text (Left).prefab",
@@ -66,7 +66,7 @@ const SwitchWithTextRight = (
   return {
     data: {
       title: "Switch with Text (Right)",
-      img: "https://via.placeholder.com/500x400",
+      img: "/components/Switch with Text (Right).webp",
       href: "/vrc/monoui/switch",
       assetsPath:
         "/Packages/Mono UI/Runtime/Assets/Prefab/Components/Switch/Switch with Text (Right).prefab",

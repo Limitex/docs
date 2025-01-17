@@ -10,7 +10,7 @@ const ProgressDefault = (
   return {
     data: {
       title: "Progress",
-      img: "https://via.placeholder.com/500x400",
+      img: "/components/Progress.webp",
       href: "/vrc/monoui/progress",
       assetsPath:
         "/Packages/Mono UI/Runtime/Assets/Prefab/Components/Progress.prefab",

@@ -14,7 +14,7 @@ const DialogDefault = (props: Partial<TreeItemProps> = {}): ComponentResult => {
   return {
     data: {
       title: "Dialog",
-      img: "https://via.placeholder.com/500x400",
+      img: "/components/Dialog Provider.webp",
       href: "/vrc/monoui/dialog",
       assetsPath:
         "/Packages/Mono UI/Runtime/Assets/Prefab/Providers/Dialog Provider.prefab",

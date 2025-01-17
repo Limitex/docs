@@ -13,7 +13,7 @@ const ToastDefault = (props: Partial<TreeItemProps> = {}): ComponentResult => {
   return {
     data: {
       title: "Toast",
-      img: "https://via.placeholder.com/500x400",
+      img: "/components/Toast Provider.webp",
       href: "/vrc/monoui/toast",
       assetsPath:
         "/Packages/Mono UI/Runtime/Assets/Prefab/Providers/Toast Provider.prefab",

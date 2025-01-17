@@ -10,7 +10,7 @@ const ScrollbarDefault = (
   return {
     data: {
       title: "Scrollbar",
-      img: "https://via.placeholder.com/500x400",
+      img: "/components/Scrollbar.webp",
       href: "/vrc/monoui/scrollbar",
       assetsPath:
         "/Packages/Mono UI/Runtime/Assets/Prefab/Components/Scrollbar.prefab",
