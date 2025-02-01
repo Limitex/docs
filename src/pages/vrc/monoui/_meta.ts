@@ -11,6 +11,7 @@ export default {
   },
   uisample: "UI Sample",
   quizmenu: "Quiz Menu",
+  simplelog: "Simple Log",
   worldlog: "World Log",
   platformstatistics: "Platform Statistics",
   "--- Layout": {
