@@ -12,7 +12,7 @@ const SITE_CONFIG = {
     {
       pattern: '/vrc/monoui',
       config: {
-        title: 'MonoUI Documentation',
+        title: 'Mono UI',
         description: 'UI Framework MonoUI Documentation for VRChat',
         ogImage: `${process.env.NEXT_PUBLIC_SITE_URL}/ogp-monoui.png`,
         keywords: 'MonoUI, VRChat, UI Framework, Unity, Documentation'
