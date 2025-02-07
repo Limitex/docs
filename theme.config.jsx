@@ -21,17 +21,18 @@ const SITE_CONFIG = {
   ]
 }
 
-const getPageConfig = (path, frontMatter) => {
-  const matchingPath = SITE_CONFIG.paths.find(
-    ({ pattern }) => path.startsWith(pattern)
-  )
-  const baseConfig = matchingPath ? matchingPath.config : SITE_CONFIG.default
+const getPageConfig = (path, frontMatter, title) => {
+  const matchedConfig = SITE_CONFIG.paths.find(
+    ({ pattern }) => path.startsWith(pattern))?.config || SITE_CONFIG.default
+
+  const titles = [title || frontMatter.title, matchedConfig.title, SITE_CONFIG.default.title]
+    .filter((t, i, arr) => t && t !== arr[i - 1])
 
   return {
-    title: frontMatter.title || baseConfig.title,
-    description: frontMatter.description || baseConfig.description,
-    ogImage: baseConfig.ogImage,
-    keywords: frontMatter.keywords || baseConfig.keywords
+    title: titles.join(' - '),
+    description: frontMatter.description || matchedConfig.description,
+    ogImage: matchedConfig.ogImage,
+    keywords: frontMatter.keywords || matchedConfig.keywords
   }
 }
 
@@ -39,12 +40,13 @@ export default {
   logo: <span>Limitex Documents</span>,
   head: () => {
     const { asPath } = useRouter()
-    const { frontMatter } = useConfig()
+    const { frontMatter, title } = useConfig()
     const url = `${process.env.NEXT_PUBLIC_SITE_URL}${asPath}`
-    const config = getPageConfig(asPath, frontMatter)
+    const config = getPageConfig(asPath, frontMatter, title)
 
     return (
       <>
+        <title>{config.title}</title>
         <meta charSet="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <meta name="description" content={config.description} />
