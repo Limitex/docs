@@ -1,17 +1,10 @@
 import React from "react";
-import { useEffect, useState } from "react";
 import { PackagePlus } from "lucide-react";
 import { event } from "nextjs-google-analytics";
 import Button from "./button";
 
 const VPMRepositoryLink = () => {
-  const [baseUrl, setBaseUrl] = useState("");
-
-  useEffect(() => {
-    setBaseUrl(window.location.origin);
-  }, []);
-
-  const vccUrl = `vcc://vpm/addRepo?url=${baseUrl}/vpm.json`;
+  const vccUrl = `vcc://vpm/addRepo?url=https://vpm.limitex.dev/index.json`;
 
   const handleClick = () => {
     event("click_vpm", {
